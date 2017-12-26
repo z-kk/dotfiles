@@ -1,4 +1,8 @@
 # OS共通
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 alias bashrc='vim ~/.bashrc'
 
 function plat(){
@@ -6,6 +10,8 @@ function plat(){
     platex $1.tex;
     dvipdfmx $1.dvi
 }
+
+export EDITOR=vim
 
 # mac
 alias ls='ls -ABGF'
