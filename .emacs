@@ -13,6 +13,15 @@
 (set-default-coding-systems 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
+;; 行数を表示する
+(global-linum-mode t)
+
+;; 対応する括弧を光らせる
+(show-paren-mode 1)
+
+;; 現在の関数名表示
+(which-function-mode 1)
+
 ;; マウス有効化
 (xterm-mouse-mode 1)
 
