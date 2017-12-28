@@ -31,6 +31,7 @@ endif
 
 " ---- bash_aliases ----
 let $BASH_ENV = "~/.bash_aliases"
+autocmd BufNewFile,BufRead .bash_aliases setf sh
 
 highlight LineNr ctermfg=6
 highlight CursorLine term=none cterm=none ctermbg=darkgray

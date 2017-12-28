@@ -9,6 +9,8 @@ function plat(){
     dvipdfmx $1.dvi
 }
 
+export EDITOR=vim
+
 # mac
 alias ls='ls -ABGF'
 alias grep='grep --color'
