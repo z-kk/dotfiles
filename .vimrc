@@ -23,7 +23,7 @@ set mouse=a
 set backspace=eol,start
 set whichwrap=b,s
 
-if &enc !=# 'utf-8'
+if &fenc !=# 'utf-8'
 	set enc=utf-8
 	set fenc=utf-8
 	set fencs=ucs-bom,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp,utf-8

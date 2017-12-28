@@ -1,5 +1,7 @@
 # OS共通
-alias bashrc='vim ~/.bashrc'
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 function plat(){
     platex $1.tex;
