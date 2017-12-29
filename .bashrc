@@ -12,11 +12,6 @@ function plat(){
 export EDITOR=vim
 
 # mac
-alias ls='ls -ABGF'
-alias grep='grep --color'
-
-alias go='open'
-
 # lsの色設定
 export LSCOLORS=gxfxcxdxbxegedabagacad
 # コマンドラインの色設定

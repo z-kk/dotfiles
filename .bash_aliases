@@ -14,3 +14,8 @@ alias logoff='gnome-session-quit'
 
 # cygwin
 alias go='cygstart'
+
+# mac
+alias ls='ls -ABGF'
+alias grep='grep --color'
+alias go='open'
