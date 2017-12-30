@@ -14,6 +14,7 @@ set foldmethod=indent
 
 set tabstop=4
 set shiftwidth=4
+set softtabstop=0
 set autoindent
 set smartindent
 set noexpandtab
