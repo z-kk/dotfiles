@@ -18,9 +18,10 @@ set laststatus=2
 set statusline=%<%F\ %m%r%h
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
 set statusline+=%=%l/%L\ %P
+set showcmd
 
 set mouse=a
-set backspace=eol,start
+set backspace=indent,eol,start
 set whichwrap=b,s
 
 if &fenc !=# 'utf-8'
