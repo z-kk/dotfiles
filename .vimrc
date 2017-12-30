@@ -3,9 +3,12 @@ colorscheme ron
 
 set number
 set cursorline
+set showmatch
 
 set incsearch
 set nohlsearch
+set ignorecase
+set smartcase
 set wildmode=longest,list
 set foldmethod=indent
 
@@ -13,6 +16,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+set noexpandtab
 
 set laststatus=2
 set statusline=%<%F\ %m%r%h
