@@ -1,4 +1,8 @@
-;(package-initialize)
+;; パッケージ管理
+(require 'package)
+(add-to-list 'package-archives
+	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
 
 (custom-set-variables
  '(load-home-init-file t t)

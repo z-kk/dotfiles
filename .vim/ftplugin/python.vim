@@ -1,1 +1,6 @@
-noremap <F5> :!python3 %
+noremap <F5> <Esc> :!python3 % <Return>
+
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal softtabstop=0
+setlocal noexpandtab
