@@ -3,13 +3,14 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-function plat(){
-    platex $1.tex;
-    platex $1.tex;
-    dvipdfmx $1.dvi
-}
+if [ -f ~/.bash_functions ]; then
+	. ~/.bash_aliases
+fi
 
 export EDITOR=vim
+
+# linux
+export PATH=$PATH:/sbin
 
 # mac
 # lsの色設定

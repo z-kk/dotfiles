@@ -9,8 +9,6 @@ alias python='python3'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
 
 # linux
-alias shutdown='/sbin/shutdown'
-alias ifconfig='/sbin/ifconfig'
 alias logoff='gnome-session-quit'
 
 # cygwin
