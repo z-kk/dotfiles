@@ -4,7 +4,7 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 if [ -f ~/.bash_functions ]; then
-	. ~/.bash_aliases
+	. ~/.bash_functions
 fi
 
 export EDITOR=vim
