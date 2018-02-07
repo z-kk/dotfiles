@@ -2,6 +2,7 @@ shopt -s expand_aliases
 
 alias bashrc='vim ~/.bashrc'
 alias bashal='vim ~/.bash_aliases'
+alias bashfn='vim ~/.bash_functions'
 
 alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
@@ -12,7 +13,9 @@ alias today='date "+%Y-%m-%d %H:%M:%S"'
 alias logoff='gnome-session-quit'
 
 # cygwin
-alias go='cygstart'
+alias open='cygstart'
+alias cyg='mintty -i /Cygwin-Terminal.ico - &'
+alias emac='emacs-w32'
 
 # mac
 alias ls='ls -ABGF'
