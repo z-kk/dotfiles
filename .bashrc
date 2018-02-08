@@ -12,6 +12,12 @@ export EDITOR=vim
 # linux
 export PATH=$PATH:/sbin
 
+# cygwin
+# デスクトップをマウント
+if [ ! -d /desktop ]; then
+	mount $(reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders" | grep Desktop | awk '{ print $3 }' | sed s/\\\\/\\//g | sed s/\\r//) /desktop
+fi
+
 # mac
 # lsの色設定
 export LSCOLORS=gxfxcxdxbxegedabagacad
