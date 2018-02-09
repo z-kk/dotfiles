@@ -72,6 +72,7 @@
 ;(evil-mode 1)
 ;(require 'evil-mode-line)
 ;(require 'evil-org)
+;(define-key evil-motion-state-map (kbd ";") 'evil-window-map)
 
 ;; auto-complete
 ;(require 'auto-complete)
