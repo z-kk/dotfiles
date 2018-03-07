@@ -8,6 +8,7 @@ alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
 alias python='python3'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
+alias jp='iconv -f cp932 -t utf-8'
 
 # linux
 alias logoff='gnome-session-quit'
