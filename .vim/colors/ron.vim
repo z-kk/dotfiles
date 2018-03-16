@@ -14,7 +14,7 @@ hi Normal		guifg=cyan	guibg=black
 hi NonText		guifg=yellow guibg=#303030
 hi comment		guifg=green
 hi constant		guifg=cyan	gui=bold
-hi identifier	ctermfg=6	guifg=cyan	gui=NONE
+hi identifier	cterm=bold ctermfg=2	guifg=cyan	gui=NONE
 hi statement	guifg=lightblue	gui=NONE
 hi preproc		guifg=Pink2
 hi type			guifg=seagreen	gui=bold
@@ -39,7 +39,7 @@ hi DiffChange   guibg=darkgreen
 hi DiffText		guibg=olivedrab
 hi DiffAdd		guibg=slateblue
 hi DiffDelete   guibg=coral
-hi Folded		guibg=gray30
-hi FoldColumn	guibg=gray30 guifg=white
-hi cIf0			guifg=gray
+hi Folded		ctermfg=6 guibg=gray30
+hi FoldColumn	ctermfg=6 guibg=gray30 guifg=white
+hi cIf0			cterm=bold guifg=gray
 hi diffOnly		guifg=red gui=bold
