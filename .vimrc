@@ -1,5 +1,4 @@
 syntax on
-colorscheme ron
 
 set number
 set cursorline
@@ -40,8 +39,9 @@ let $BASH_ENV = "~/.bash_aliases"
 autocmd BufNewFile,BufRead .bash_aliases setf sh
 autocmd BufNewFile,BufRead .bash_functions setf sh
 
-highlight LineNr ctermfg=6
-highlight CursorLine term=none cterm=none ctermbg=darkgray
-highlight CursorLineNr ctermfg=3
+autocmd colorscheme * highlight LineNr ctermfg=6
+autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=darkgray
+autocmd colorscheme * highlight CursorLineNr ctermfg=3
+colorscheme ron
 
 noremap ; <C-w>

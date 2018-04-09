@@ -68,6 +68,7 @@
 ;	 (setq truncate-lines nil))))
 
 ;; evil
+;(setq evil-want-C-u-scroll t)
 ;(require 'evil)
 ;(evil-mode 1)
 ;(require 'evil-mode-line)

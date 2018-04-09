@@ -22,4 +22,3 @@ alias emac='emacs-w32'
 # mac
 alias ls='ls -ABGF'
 alias grep='grep --color'
-alias go='open'
