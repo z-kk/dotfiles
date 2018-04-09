@@ -15,6 +15,7 @@ alias logoff='gnome-session-quit'
 
 # cygwin
 alias open='cygstart'
+alias wkill='taskkill /F /PID'
 alias cyg='mintty -i /Cygwin-Terminal.ico - &'
 alias emac='emacs-w32'
 
