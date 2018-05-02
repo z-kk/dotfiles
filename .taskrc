@@ -29,6 +29,6 @@ include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
-report.ls.columns=id,priority,project,recur.indicator,scheduled,due,tags,description.count
-report.ls.labels=ID,P,Project,R,Sch,Due,Tags,Description
-report.ls.sort=due+,scheduled+,project+,urgency-
+report.ls.columns=id,depends.indicator,recur.indicator,priority,scheduled,due,project,tags,description.count
+report.ls.labels=ID,D,R,P,Sch,Due,Project,Tags,Description
+report.ls.sort=due+,scheduled+,urgency-,project+
