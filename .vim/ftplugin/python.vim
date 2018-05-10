@@ -1,4 +1,4 @@
-noremap <F5> <Esc> :!python3 % <Return>
+noremap <F5> <Esc> :w <Return> :!python3 % <Return>
 
 setlocal tabstop=4
 setlocal shiftwidth=4
