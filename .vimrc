@@ -17,17 +17,20 @@ set softtabstop=0
 set autoindent
 set smartindent
 set noexpandtab
+" 改行時自動コメントアウトしない
+autocmd FileType * setlocal formatoptions-=ro
 
 " ---- status line ----
 set laststatus=2
 set statusline=%<%F\ %m%r%h
 set statusline+=%{'['.(&fenc!=''?&fenc:&enc).']['.&fileformat.']'}
-set statusline+=%=%l/%L\ %P
+set statusline+=%=[%v]\ %l/%L\ %P
 set showcmd
 
 set mouse=a
 set backspace=indent,eol,start
 set whichwrap=b,s
+set scrolloff=4
 
 " ---- encode ----
 if &fenc !=# 'utf-8'
@@ -48,4 +51,9 @@ autocmd colorscheme * highlight CursorLineNr ctermfg=3
 colorscheme ron
 syntax on
 
+" ---- remap ----
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+cnoremap <C-r>, <C-r>"
 noremap ; <C-w>
+noremap , "
