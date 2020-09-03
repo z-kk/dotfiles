@@ -6,8 +6,14 @@ set incsearch
 set nohlsearch
 set ignorecase
 set smartcase
-set wildmode=longest,list
+set shortmess-=S
+set wildmenu wildmode=full
+set wildignorecase
 set foldmethod=indent
+
+if has("patch-8.1.0360")
+    set diffopt+=internal,algorithm:histogram,indent-heuristic
+endif
 
 " ---- indent ----
 filetype plugin indent on
@@ -16,7 +22,7 @@ set shiftwidth=4
 set softtabstop=0
 set autoindent
 set smartindent
-set noexpandtab
+set expandtab
 " 改行時自動コメントアウトしない
 autocmd FileType * setlocal formatoptions-=ro
 
@@ -34,12 +40,14 @@ set scrolloff=4
 
 " ---- encode ----
 if &fenc !=# 'utf-8'
-	set enc=utf-8
-	set fenc=utf-8
-	set fencs=ucs-bom,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp,utf-8
+    set enc=utf-8
+    set fenc=utf-8
+    set fencs=ucs-bom,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp,utf-8
 endif
 
 " ---- bash_aliases ----
+let $OSTYPE = tolower(system('uname'))
+"let $IS_WSL = system('uname -a')
 let $BASH_ENV = "~/.bash_aliases"
 autocmd BufNewFile,BufRead .bash_aliases setf sh
 autocmd BufNewFile,BufRead .bash_functions setf sh
