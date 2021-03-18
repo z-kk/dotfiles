@@ -22,7 +22,7 @@ hi special		guifg=yellow
 hi ErrorMsg		guifg=Black	guibg=Red
 hi WarningMsg	guifg=Black	guibg=Green
 hi Error		guibg=Red
-hi Todo			guifg=Black	guibg=orange
+hi Todo			ctermfg=red	guifg=Black	guibg=orange
 hi Cursor		guibg=#60a060 guifg=#00ff00
 hi Search		guibg=darkgray guifg=black gui=bold 
 hi IncSearch	gui=NONE guibg=steelblue
@@ -39,7 +39,7 @@ hi DiffChange   guibg=darkgreen
 hi DiffText		guibg=olivedrab
 hi DiffAdd		guibg=slateblue
 hi DiffDelete   guibg=coral
-hi Folded		ctermfg=6 guibg=gray30
+hi Folded		ctermfg=6 ctermbg=none guibg=gray30
 hi FoldColumn	ctermfg=6 guibg=gray30 guifg=white
 hi cIf0			cterm=bold guifg=gray
 hi diffOnly		guifg=red gui=bold
