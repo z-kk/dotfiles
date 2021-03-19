@@ -1,14 +1,14 @@
-shopt -s expand_aliases
-
-alias bashrc='vim ~/.bashrc'
-alias bashal='vim ~/.bash_aliases'
-alias bashfn='vim ~/.bash_functions'
+alias bashrc='vim $XDG_CONFIG_HOME/bash/bashrc'
+alias bashpr='vim $XDG_CONFIG_HOME/bash/profile.sh'
+alias bashal='vim $XDG_CONFIG_HOME/bash/aliases.sh'
+alias bashfn='vim $XDG_CONFIG_HOME/bash/functions.sh'
 
 alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
 alias vim8='vim -c "e ++enc=utf-8"'
 alias pipython='pipenv run python'
 alias pipvim='pipenv run vim'
+alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
 alias jp='iconv -f cp932 -t utf-8'
 
