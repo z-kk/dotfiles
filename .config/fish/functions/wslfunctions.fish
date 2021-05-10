@@ -5,7 +5,7 @@ if test -n $IS_WSL
             set -a args (wslpath -w "$arg")
         end
 
-        cmd.exe /c start \"\" (echo \"$args \" | string trim -c '\"')
+        cmd.exe /c start \"\" (echo \"$args \" | string trim -c '"')
     end
 
     function shutdown
