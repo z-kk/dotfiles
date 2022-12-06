@@ -18,6 +18,11 @@ if [ -f $GIT_PROMPT_PATH ]; then
     . $GIT_PROMPT_PATH
 fi
 
+# pyenv
+if [ -e ~/.pyenv ]; then
+    eval "$(pyenv init -)"
+fi
+
 if [[ $OSTYPE =~ linux ]]; then
     # linux
     if [ -f $GIT_PROMPT_PATH ]; then
