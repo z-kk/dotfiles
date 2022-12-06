@@ -54,7 +54,7 @@ autocmd BufNewFile,BufRead .bash_functions setf sh
 
 " ---- color scheme ----
 autocmd colorscheme * highlight LineNr ctermfg=6
-autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=darkgray
+autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=17
 autocmd colorscheme * highlight CursorLineNr ctermfg=3
 colorscheme ron
 syntax on
