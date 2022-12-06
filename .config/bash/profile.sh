@@ -12,6 +12,10 @@ fi
 # nim
 export PATH=$HOME/.nimble/bin:$PATH
 
+# deno
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 if [[ $OSTYPE =~ linux ]]; then
     # linux
     umask 022
