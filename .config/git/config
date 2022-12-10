@@ -6,6 +6,8 @@
     whitespace = cr-at-eol  # cr改行を表示しない
     autocrlf = input
     ignorecase = false
+[init]
+    defaultBranch = master
 [alias]
     st = status -s
     lg = log --oneline
