@@ -47,6 +47,12 @@ endif
 " 全角記号の文字幅
 set ambiwidth=double
 
+" ---- cursor ----
+if has("vim_starting")
+    let &t_SI .= "\e[5 q"  " bar cursor shape
+    let &t_EI .= "\e[1 q"  " block cursor shape
+endif
+
 " ---- bash_aliases ----
 let $OSTYPE = tolower(system('uname'))
 "let $IS_WSL = system('uname -a')
