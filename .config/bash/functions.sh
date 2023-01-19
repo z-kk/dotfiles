@@ -22,7 +22,7 @@ function wslopen() {
         args+=("$(wslpath -w "$arg")")
     done
 
-    cmd.exe /c start "" "${args[@]}"
+    powershell.exe -Command start "" "${args[@]}"
 }
 
 function wslmount() {
