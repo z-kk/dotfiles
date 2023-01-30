@@ -43,3 +43,4 @@ hi Folded		ctermfg=6 ctermbg=none guibg=gray30
 hi FoldColumn	ctermfg=6 guibg=gray30 guifg=white
 hi cIf0			cterm=bold guifg=gray
 hi diffOnly		guifg=red gui=bold
+hi Pmenu		ctermbg=darkgray
