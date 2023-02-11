@@ -3,6 +3,9 @@ export LC_COLLATE=C  # lsの並び順
 export XDG_CONFIG_HOME=$HOME/.config
 export OSTYPE
 
+# local bin
+export PATH="$HOME/bin:$PATH"
+
 # pyenv
 if [ -e ~/.pyenv ]; then
     export PYENV_ROOT=$HOME/.pyenv
