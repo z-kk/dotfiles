@@ -28,3 +28,6 @@
 [submodule ".vim/pack/mypackage/start/nim.vim"]
 	path = .vim/pack/mypackage/start/nim.vim
 	url = https://github.com/zah/nim.vim.git
+[submodule ".vim/pack/mypackage/start/vim-fish"]
+	path = .vim/pack/mypackage/start/vim-fish
+	url = https://github.com/dag/vim-fish.git
