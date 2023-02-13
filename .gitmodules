@@ -40,3 +40,6 @@
 [submodule ".vim/pack/mypackage/opt/linediff.vim"]
 	path = .vim/pack/mypackage/opt/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
+[submodule ".vim/pack/mypackage/opt/vim-fugitive"]
+	path = .vim/pack/mypackage/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git

@@ -4,3 +4,5 @@
 !/vimdoc-ja
 !/nerdtree
 !/linediff.vim
+
+!/vim-fugitive
