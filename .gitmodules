@@ -19,3 +19,6 @@
 [submodule ".vim/pack/mypackage/start/unite-outline"]
 	path = .vim/pack/mypackage/start/unite-outline
 	url = https://github.com/Shougo/unite-outline.git
+[submodule ".vim/pack/mypackage/start/gitignore-vim"]
+	path = .vim/pack/mypackage/start/gitignore-vim
+	url = https://github.com/benknoble/gitignore-vim.git

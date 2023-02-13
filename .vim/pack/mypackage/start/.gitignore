@@ -5,3 +5,5 @@
 !/asyncomplete*
 !/vim-lsp*
 !/unite*
+
+!/gitignore-vim
