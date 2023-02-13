@@ -8,9 +8,6 @@ git clone https://github.com/AndrewRadev/linediff.vim
 git clone https://github.com/tpope/vim-fugitive.git
 # markdown
 git clone https://github.com/plasticboy/vim-markdown
-# outline
-git clone https://github.com/Shougo/unite.vim
-git clone https://github.com/Shougo/unite-outline
 
 # nim
 git clone https://github.com/zah/nim.vim.git
