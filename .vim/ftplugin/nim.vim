@@ -1,1 +1,1 @@
-noremap <F12> :LspDefinition <Return>
+noremap <F12> :LspDefinition <CR>

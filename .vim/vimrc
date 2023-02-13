@@ -54,10 +54,3 @@ if has("vim_starting")
 endif
 
 runtime! config/*.vim
-
-" ---- remap ----
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-cnoremap <C-r>, <C-r>"
-noremap ; <C-w>
-noremap , "
