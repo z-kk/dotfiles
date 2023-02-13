@@ -53,13 +53,6 @@ if has("vim_starting")
     let &t_EI .= "\e[1 q"  " block cursor shape
 endif
 
-" ---- bash_aliases ----
-let $OSTYPE = tolower(system('uname'))
-"let $IS_WSL = system('uname -a')
-let $BASH_ENV = "~/.bash_aliases"
-autocmd BufNewFile,BufRead .bash_aliases setf sh
-autocmd BufNewFile,BufRead .bash_functions setf sh
-
 " ---- color scheme ----
 autocmd colorscheme * highlight LineNr ctermfg=6
 autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=17
