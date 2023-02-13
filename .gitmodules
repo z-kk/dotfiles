@@ -31,3 +31,6 @@
 [submodule ".vim/pack/mypackage/start/vim-fish"]
 	path = .vim/pack/mypackage/start/vim-fish
 	url = https://github.com/dag/vim-fish.git
+[submodule ".vim/pack/mypackage/opt/vimdoc-ja"]
+	path = .vim/pack/mypackage/opt/vimdoc-ja
+	url = https://github.com/vim-jp/vimdoc-ja.git

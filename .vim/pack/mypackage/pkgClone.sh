@@ -1,5 +1,3 @@
-# 日本語
-git clone https://github.com/vim-jp/vimdoc-ja.git
 # ファイルツリー
 git clone https://github.com/scrooloose/nerdtree.git
 # ファイル内diff
