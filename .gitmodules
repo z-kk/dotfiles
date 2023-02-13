@@ -37,3 +37,6 @@
 [submodule ".vim/pack/mypackage/opt/nerdtree"]
 	path = .vim/pack/mypackage/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/pack/mypackage/opt/linediff.vim"]
+	path = .vim/pack/mypackage/opt/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim.git
