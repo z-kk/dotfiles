@@ -1,6 +1,7 @@
 export EDITOR=vim
 export LC_COLLATE=C  # lsの並び順
 export XDG_CONFIG_HOME=$HOME/.config
+export OSTYPE
 
 # pyenv
 if [ -e ~/.pyenv ]; then
@@ -21,7 +22,7 @@ if [[ $OSTYPE =~ linux ]]; then
     umask 022
     export PATH=$PATH:/sbin
     if [[ -n $(grep Microsoft /proc/version) ]]; then
-        IS_WSL=1
+        export IS_WSL=1
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
     # cygwin
