@@ -4,10 +4,10 @@ noremap <F5> <Esc>:wa<Return>:!go run .<Return>
 inoremap <F5> <Esc>:wa<Return>:!go run .<Return>
 
 if executable('gopls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'gopls',
-        \ 'cmd': {server_info->['gopls']},
-        \ 'whitelist': ['go'],
-        \ })
-    autocmd BufWritePre *.go LspDocumentFormatSync
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'gopls',
+    \ 'cmd': {server_info->['gopls']},
+    \ 'whitelist': ['go'],
+    \ })
+  autocmd BufWritePre *.go LspDocumentFormatSync
 endif
