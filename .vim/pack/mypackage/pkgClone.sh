@@ -6,8 +6,6 @@ git clone https://github.com/scrooloose/nerdtree.git
 git clone https://github.com/AndrewRadev/linediff.vim
 # VimでGit
 git clone https://github.com/tpope/vim-fugitive.git
-# markdown
-git clone https://github.com/plasticboy/vim-markdown
 
 # nim
 git clone https://github.com/zah/nim.vim.git

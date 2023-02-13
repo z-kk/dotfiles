@@ -22,3 +22,6 @@
 [submodule ".vim/pack/mypackage/start/gitignore-vim"]
 	path = .vim/pack/mypackage/start/gitignore-vim
 	url = https://github.com/benknoble/gitignore-vim.git
+[submodule ".vim/pack/mypackage/start/vim-markdown"]
+	path = .vim/pack/mypackage/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
