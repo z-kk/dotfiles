@@ -25,3 +25,6 @@
 [submodule ".vim/pack/mypackage/start/vim-markdown"]
 	path = .vim/pack/mypackage/start/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/pack/mypackage/start/nim.vim"]
+	path = .vim/pack/mypackage/start/nim.vim
+	url = https://github.com/zah/nim.vim.git

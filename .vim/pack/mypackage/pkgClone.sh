@@ -7,7 +7,5 @@ git clone https://github.com/AndrewRadev/linediff.vim
 # VimでGit
 git clone https://github.com/tpope/vim-fugitive.git
 
-# nim
-git clone https://github.com/zah/nim.vim.git
 # fish
 git clone https://github.com/dag/vim-fish.git
