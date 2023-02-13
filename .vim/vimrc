@@ -12,14 +12,14 @@ set wildignorecase
 set foldmethod=indent
 
 if has("patch-8.1.0360")
-    set diffopt+=internal,algorithm:histogram,indent-heuristic
+  set diffopt+=internal,algorithm:histogram,indent-heuristic
 endif
 
 " ---- indent ----
 filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
-set softtabstop=0
+set softtabstop=4
 set autoindent
 set smartindent
 set expandtab
@@ -40,29 +40,17 @@ set scrolloff=4
 
 " ---- encode ----
 if &fenc !=# 'utf-8'
-    set enc=utf-8
-    set fenc=utf-8
-    set fencs=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp
+  set enc=utf-8
+  set fenc=utf-8
+  set fencs=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp
 endif
 " 全角記号の文字幅
 set ambiwidth=double
 
 " ---- cursor ----
 if has("vim_starting")
-    let &t_SI .= "\e[5 q"  " bar cursor shape
-    let &t_EI .= "\e[1 q"  " block cursor shape
+  let &t_SI .= "\e[5 q"  " bar cursor shape
+  let &t_EI .= "\e[1 q"  " block cursor shape
 endif
 
-" ---- color scheme ----
-autocmd colorscheme * highlight LineNr ctermfg=6
-autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=17
-autocmd colorscheme * highlight CursorLineNr ctermfg=3
-colorscheme ron
-syntax on
-
-" ---- remap ----
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-cnoremap <C-r>, <C-r>"
-noremap ; <C-w>
-noremap , "
+runtime! config/*.vim
