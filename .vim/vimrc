@@ -53,12 +53,7 @@ if has("vim_starting")
   let &t_EI .= "\e[1 q"  " block cursor shape
 endif
 
-" ---- color scheme ----
-autocmd colorscheme * highlight LineNr ctermfg=6
-autocmd colorscheme * highlight CursorLine term=none cterm=none ctermbg=17
-autocmd colorscheme * highlight CursorLineNr ctermfg=3
-colorscheme ron
-syntax on
+runtime! config/*.vim
 
 " ---- remap ----
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"

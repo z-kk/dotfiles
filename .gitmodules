@@ -1,0 +1,3 @@
+[submodule ".vim/pack/mypackage/start/vim-hybrid"]
+	path = .vim/pack/mypackage/start/vim-hybrid
+	url = https://github.com/w0ng/vim-hybrid.git
