@@ -6,6 +6,7 @@
     whitespace = cr-at-eol  # cr改行を表示しない
     autocrlf = input
     ignorecase = false
+    quotepath = false
 [init]
     defaultBranch = master
 [alias]
