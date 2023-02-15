@@ -24,7 +24,7 @@ if [[ $OSTYPE =~ linux ]]; then
     # linux
     umask 022
     export PATH=$PATH:/sbin
-    if [[ -n $(grep Microsoft /proc/version) ]]; then
+    if [[ -n $(grep -i Microsoft /proc/version) ]]; then
         export IS_WSL=1
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
