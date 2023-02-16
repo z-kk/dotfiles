@@ -12,6 +12,14 @@ alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
 alias jp='iconv -f cp932 -t utf-8'
 
+# Docker
+alias dcb='docker-compose build'
+alias dcu='docker-compose up -d'
+alias dcd='docker-compose down'
+alias dce='docker-compose exec'
+alias dcl='docker-compose logs'
+alias dcp='docker-compose ps'
+
 if [[ $OSTYPE =~ linux ]]; then
     # linux
     alias logoff='gnome-session-quit'

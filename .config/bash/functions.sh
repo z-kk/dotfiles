@@ -19,10 +19,10 @@ function chmod-r() {
 function wslopen() {
     local args=()
     for arg; do
-        args+=("$(wslpath -w "$arg")")
+        args+=("\"\`\"$(wslpath -w "$arg")\`\"\"")
     done
 
-    powershell.exe -Command start "" "${args[@]}"
+    powershell.exe -Command start "${args[@]}"
 }
 
 function wslmount() {
