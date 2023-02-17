@@ -40,6 +40,11 @@ if has('vim_starting')
   let &t_EI .= "\e[1 q"  " block cursor shape
 endif
 
+" ---- XDG ----
+if !has('nvim')
+  set viminfofile=$XDG_CACHE_HOME/vim/viminfo
+endif
+
 filetype off
 runtime! config/plugin.vim
 runtime! config/color.vim

@@ -3,6 +3,10 @@
 
 !/git
 !/bash
+!/readline
+!/wgetrc
 !/tmux
 !/byobu
 !/fish
+!/task
+taskrc
