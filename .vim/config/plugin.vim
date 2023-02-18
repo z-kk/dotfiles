@@ -36,6 +36,7 @@ call jetpack#end()
 "let g:jetpack_download_method = 'curl'
 
 " ---- complement ----
+"let g:lsp_diagnostics_virtual_text_enabled = 0
 au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
       \ 'name': 'file',
       \ 'allowlist': ['*'],
