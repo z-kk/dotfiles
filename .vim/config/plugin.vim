@@ -18,18 +18,17 @@ Jetpack 'prabirshrestha/asyncomplete-lsp.vim'
 Jetpack 'prabirshrestha/vim-lsp'
 Jetpack 'mattn/vim-lsp-settings'
 
-" Unite
+" file utils
 Jetpack 'Shougo/unite.vim'
 Jetpack 'Shougo/unite-outline'
+Jetpack 'scrooloose/nerdtree'
+Jetpack 'Xuyuanp/nerdtree-git-plugin'
+Jetpack 'AndrewRadev/linediff.vim'
 
 " filetype
 Jetpack 'plasticboy/vim-markdown'
 Jetpack 'zah/nim.vim'
 Jetpack 'dag/vim-fish'
-
-" other
-Jetpack 'scrooloose/nerdtree'
-Jetpack 'AndrewRadev/linediff.vim'
 
 call jetpack#end()
 
@@ -52,6 +51,26 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 
 " ---- unite-outline ----
 command Outline Unite -vertical outline
+
+" ---- NERDTree ----
+" Close the tab if NERDTree is the only window remaining in it.
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
+let NERDTreeShowHidden=1
+let NERDTreeDirArrowExpandable='+'
+let NERDTreeDirArrowCollapsible='-'
+let g:NERDTreeGitStatusShowIgnored = 1
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ 'Modified'  :'M',
+            \ 'Staged'    :'+',
+            \ 'Untracked' :'A',
+            \ 'Renamed'   :'R',
+            \ 'Unmerged'  :'U',
+            \ 'Deleted'   :'D',
+            \ 'Dirty'     :'x',
+            \ 'Ignored'   :'i',
+            \ 'Clean'     :' ',
+            \ 'Unknown'   :'?',
+            \ }
 
 " ---- vim-markdown ----
 let g:vim_markdown_folding_disabled = 1
