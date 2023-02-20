@@ -30,6 +30,9 @@ if [[ $OSTYPE =~ linux ]]; then
     export PATH=$PATH:/sbin
     if [[ -n $(grep -i Microsoft /proc/version) ]]; then
         export IS_WSL=1
+        if [[ -n $(ps -o command= -p $(ps -o ppid= -p $$) | grep wsltty) ]]; then
+            export IS_WSLTTY=1
+        fi
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
     # cygwin
