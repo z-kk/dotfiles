@@ -1,28 +1,30 @@
 [user]
-    name = z-kk
-    email = z-kk@outlook.jp
+	name = z-kk
+	email = z-kk@outlook.jp
 [core]
-    editor = vim -c \"set fenc=utf-8\"
-    whitespace = cr-at-eol  # cr改行を表示しない
-    autocrlf = input
-    ignorecase = false
-    quotepath = false
+	editor = vim -c \"set fenc=utf-8\"
+	whitespace = cr-at-eol	# cr改行を表示しない
+	autocrlf = input
+	ignorecase = false
+	quotepath = false
 [init]
-    defaultBranch = master
+	defaultBranch = master
 [alias]
-    st = status -s
-    lg = log --oneline
-    lga = log --all --graph --date=short --pretty=format:'%C(auto)%h %C(magenta)%cd%C(auto)%d %s %C(green)<%cn>' -10
-    lgal = log --all --graph --date=short --pretty=format:'%C(auto)%h %C(magenta)%cd%C(auto)%d %s %C(green)<%cn>'
-    b = branch
-    bn = rev-parse --abbrev-ref HEAD  # 現在のブランチ名を表示
-    co = checkout
+	st = status -s
+	lg = log --oneline
+	lga = log --all --graph --date=short --pretty=format:'%C(auto)%h %C(magenta)%cd%C(auto)%d %s %C(green)<%cn>' -10
+	lgal = log --all --graph --date=short --pretty=format:'%C(auto)%h %C(magenta)%cd%C(auto)%d %s %C(green)<%cn>'
+	b = branch
+	bn = rev-parse --abbrev-ref HEAD  # 現在のブランチ名を表示
+	co = checkout
 [merge]
-    tool = vimdiff
+	tool = vimdiff
+[fetch]
+	prune = true
 [pull]
-    ff = only
+	ff = only
 [diff]
-    algorithm = histogram
+	algorithm = histogram
 [diff "xlsx"]
-    binary = true
-    textconv = xlsx-textconv
+	binary = true
+	textconv = xlsx-textconv
