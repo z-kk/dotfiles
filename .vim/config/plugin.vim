@@ -11,6 +11,9 @@ Jetpack 'benknoble/gitignore-vim'
 
 " colorscheme
 Jetpack 'w0ng/vim-hybrid'
+let g:hybrid_custom_term_colors = 1
+Jetpack 'svjunic/RadicalGoodSpeed.vim'
+Jetpack 'Haron-Prime/Antares'
 
 " complement
 Jetpack 'prabirshrestha/asyncomplete.vim'

@@ -6,28 +6,34 @@ if has('vim_starting')
     set termguicolors
   endif
 
-  if has('gui_running') || (&t_Co ?? 0) >= 256
-    let g:hybrid_custom_term_colors = 1
+  let colorlist = map(split(globpath(&runtimepath, 'colors/*.vim'), '\n'), 'fnamemodify(v:val, ":t:r")')
+  if index(colorlist, $VIMCOLOR) > -1
+    colorscheme $VIMCOLOR
+  elseif has('gui_running') && index(colorlist, 'hybrid') > -1
     colorscheme hybrid
+  elseif (&t_Co ?? 0) >= 256 && index(colorlist, 'radicalgoodspeed') > -1
+    colorscheme radicalgoodspeed
   else
     colorscheme ron
   endif
 endif
 
 if has('gui_running') || &termguicolors
-  hi Comment guifg=#42935f
-  hi Todo cterm=reverse gui=reverse
+  if g:colors_name == 'hybrid'
+    hi Comment guifg=#42935f
+    hi Todo cterm=reverse gui=reverse
 
-  hi DiffAdd guifg=NONE guibg=#002266
-  hi DiffChange guifg=NONE guibg=#332266
-  hi DiffDelete guibg=#101010
-  hi DiffText guifg=NONE guibg=#551800
+    hi DiffAdd guifg=NONE guibg=#002266
+    hi DiffChange guifg=NONE guibg=#332266
+    hi DiffDelete guibg=#101010
+    hi DiffText guifg=NONE guibg=#551800
 
-  hi clear SpecialKey
-  hi link SpecialKey Special
+    hi clear SpecialKey
+    hi link SpecialKey Special
+  endif
 elseif g:colors_name == 'hybrid'
   hi Normal ctermfg=250
-  hi Comment ctermfg=28
+  hi Comment ctermfg=78
   hi Constant ctermfg=201
   hi String ctermfg=208
   hi Statement ctermfg=40
@@ -49,7 +55,10 @@ elseif g:colors_name == 'hybrid'
   hi link SpecialKey Special
   hi StatusLine ctermfg=51 ctermbg=21 cterm=NONE
   hi StatusLineNC ctermfg=239
-else
+elseif g:colors_name == 'radicalgoodspeed'
+  hi CursorLine ctermbg=17
+  hi StatusLine ctermfg=233 ctermbg=45
+elseif (&t_Co ?? 0) < 88
   hi Normal ctermfg=gray
   hi Comment ctermfg=darkgreen
 
