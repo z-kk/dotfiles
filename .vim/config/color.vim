@@ -58,6 +58,20 @@ elseif g:colors_name == 'hybrid'
 elseif g:colors_name == 'radicalgoodspeed'
   hi CursorLine ctermbg=17
   hi StatusLine ctermfg=233 ctermbg=45
+
+  hi DiffAdd ctermfg=NONE
+  hi DiffChange ctermfg=NONE ctermbg=18
+  hi DiffText ctermfg=NONE
+
+  hi Folded ctermfg=244
+  hi Todo ctermbg=237
+  hi Type ctermfg=135
+  hi Keyword ctermfg=226
+  hi Special ctermfg=111
+  hi Error ctermfg=220
+
+  hi htmlTagName ctermfg=226
+  hi htmlArg ctermfg=213
 elseif (&t_Co ?? 0) < 88
   hi Normal ctermfg=gray
   hi Comment ctermfg=darkgreen
