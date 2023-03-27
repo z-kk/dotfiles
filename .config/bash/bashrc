@@ -1,5 +1,9 @@
 tabs 4
 
+case $TERM in
+    linux) LANG=C.UTF-8;;
+esac
+
 if [ -f $XDG_CONFIG_HOME/bash/aliases.sh ]; then
     . $XDG_CONFIG_HOME/bash/aliases.sh
 fi
