@@ -1,0 +1,19 @@
+# General decoration
+color.warning=rgb553 on rgb511
+color.error=rgb555 on rgb500
+
+# Task state
+color.active=on rgb012
+color.scheduled=on rgb001
+color.blocked=on rgb210
+color.blocking=
+
+# Priority
+color.uda.priority.H=rgb450
+color.uda.priority.M=rgb050
+color.uda.priority.L=rgb030
+
+# Due
+color.due=rgb415
+color.due.today=rgb055
+color.overdue=rgb500
