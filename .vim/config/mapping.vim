@@ -6,3 +6,6 @@ noremap , "
 cnoremap <C-r>, <C-r>"
 
 noremap <F12> :LspDefinition <CR>
+noremap <leader>fn :Fern .<CR>
+noremap <leader>ff :Fern . -reveal=%<CR>
+noremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>

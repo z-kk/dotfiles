@@ -43,29 +43,9 @@ Jetpack 'Shougo/unite.vim'
 Jetpack 'Shougo/unite-outline'
 command Outline Unite -vertical outline
 
-Jetpack 'scrooloose/nerdtree'
-let NERDTreeShowHidden=1
-if $IS_WSLTTY
-  let NERDTreeDirArrowExpandable='+'
-  let NERDTreeDirArrowCollapsible='-'
-endif
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
-Jetpack 'Xuyuanp/nerdtree-git-plugin'
-let g:NERDTreeGitStatusShowIgnored = 1
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-            \ 'Modified'  :'M',
-            \ 'Staged'    :'+',
-            \ 'Untracked' :'A',
-            \ 'Renamed'   :'R',
-            \ 'Unmerged'  :'U',
-            \ 'Deleted'   :'D',
-            \ 'Dirty'     :'x',
-            \ 'Ignored'   :'i',
-            \ 'Clean'     :' ',
-            \ 'Unknown'   :'?',
-            \ }
+Jetpack 'lambdalisue/fern.vim'
+let g:fern#default_hidden = 1
+Jetpack 'lambdalisue/fern-git-status.vim'
 
 Jetpack 'AndrewRadev/linediff.vim'
 
