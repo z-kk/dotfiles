@@ -16,6 +16,15 @@ function chmod-r() {
     find $dir -type f -exec chmod 644 {} +
 }
 
+function removepath() {
+    # PATHから引数を含むパスを削除
+    if [ -z "$1" ]; then
+        return
+    fi
+
+    export PATH=$(echo -n $PATH | tr ":" "\n" | grep -v "$1" | tr "\n" ":" | sed "s/:$//")
+}
+
 function wslopen() {
     local args=()
     for arg; do
