@@ -1,0 +1,16 @@
+snippet fetch
+	fetch($1"/${2:path}", {
+		method: "${3:POST}",
+		body: ${4:fd},
+	}).then(response => {
+		if (!response.ok) {
+			throw new Error("${5:response error}");
+		}
+		return response.${6:json()};
+	}).then(${7:data} => {
+		$8
+	}).catch(err => {
+		alert(err);
+	}).finally(_ => {
+		$9
+	});

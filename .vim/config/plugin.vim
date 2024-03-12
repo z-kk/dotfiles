@@ -38,6 +38,12 @@ Jetpack 'prabirshrestha/vim-lsp'
 "let g:lsp_diagnostics_virtual_text_enabled = 0
 Jetpack 'mattn/vim-lsp-settings'
 
+" snippet
+Jetpack 'garbas/vim-snipmate'
+let g:snipMate = { 'snippet_version': 1 }
+Jetpack 'MarcWeber/vim-addon-mw-utils'
+Jetpack 'tomtom/tlib_vim'
+
 " file utils
 Jetpack 'Shougo/unite.vim'
 Jetpack 'Shougo/unite-outline'
@@ -53,6 +59,9 @@ Jetpack 'AndrewRadev/linediff.vim'
 Jetpack 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+
+Jetpack 'chrisbra/csv.vim'
+let g:csv_no_conceal = 1
 
 Jetpack 'zah/nim.vim'
 Jetpack 'dag/vim-fish'
