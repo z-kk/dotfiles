@@ -2,8 +2,11 @@ if [[ $READPROF ]]; then
     return
 fi
 
+LC_ALL=
+LANG=C.UTF-8
+LC_COLLATE=C  # lsの並び順
+
 export EDITOR=vim
-export LC_COLLATE=C  # lsの並び順
 export OSTYPE
 
 # XDG
