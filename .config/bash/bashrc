@@ -19,7 +19,7 @@ if [ -f $GIT_PROMPT_PATH ]; then
 fi
 
 # pyenv
-if [ -e ~/.pyenv ]; then
+if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init -)"
 fi
 
