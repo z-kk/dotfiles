@@ -24,8 +24,8 @@ export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TASKDATA="$XDG_DATA_HOME/task"
 
 # pyenv
-if [ -e ~/.pyenv ]; then
-    export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
+if [ -e $PYENV_ROOT ]; then
     export PATH="$PYENV_ROOT/bin:$PATH"
     eval "$(pyenv init --path)"
 fi
