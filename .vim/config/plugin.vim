@@ -69,6 +69,7 @@ Jetpack 'AndrewRadev/linediff.vim'
 Jetpack 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+Jetpack 'mattn/vim-maketable'
 
 Jetpack 'chrisbra/csv.vim'
 let g:csv_no_conceal = 1
