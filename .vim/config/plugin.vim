@@ -9,6 +9,10 @@ Jetpack 'vim-jp/vimdoc-ja'
 Jetpack 'tpope/vim-fugitive'
 Jetpack 'benknoble/gitignore-vim'
 
+" Simplenote
+Jetpack 'simplenote-vim/simplenote.vim'
+let g:SimplenoteUsername = ""
+
 " colorscheme
 Jetpack 'w0ng/vim-hybrid'
 let g:hybrid_custom_term_colors = 1

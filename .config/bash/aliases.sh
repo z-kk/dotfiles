@@ -5,12 +5,16 @@ alias bashfn='vim $XDG_CONFIG_HOME/bash/functions.sh'
 
 alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
-alias vim8='vim -c "e ++enc=utf-8"'
 alias pipython='pipenv run python'
 alias pipvim='pipenv run vim'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
 alias jp='iconv -f cp932 -t utf-8'
+
+# Vim
+alias vim8='vim -c "e ++enc=utf-8"'
+alias jetpacksync='vim -c JetpackSync'
+alias simplenote='vim -c SimplenoteList'
 
 # Docker
 alias dcb='docker compose build'
