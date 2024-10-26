@@ -13,6 +13,12 @@ Jetpack 'benknoble/gitignore-vim'
 Jetpack 'simplenote-vim/simplenote.vim'
 let g:SimplenoteUsername = ""
 
+" Memolist
+Jetpack 'glidenote/memolist.vim'
+let g:memolist_path = "$XDG_DATA_HOME/memo"
+let g:memolist_memo_suffix = "md"
+let g:memolist_unite = 1
+
 " colorscheme
 Jetpack 'w0ng/vim-hybrid'
 let g:hybrid_custom_term_colors = 1

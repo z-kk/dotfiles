@@ -9,6 +9,11 @@ inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<C-o>zR\<Plug>snipMateNextOrTri
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<Plug>snipMateBack"
 
 noremap <F12> :LspDefinition <CR>
-noremap <leader>fn :Fern .<CR>
-noremap <leader>ff :Fern . -reveal=%<CR>
-noremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>
+
+nnoremap <leader>fn :Fern .<CR>
+nnoremap <leader>ff :Fern . -reveal=%<CR>
+nnoremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>
+
+nnoremap <leader>mn :MemoNew<CR>
+nnoremap <leader>ml :MemoList<CR>
+nnoremap <leader>mg :MemoGrep<CR>

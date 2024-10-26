@@ -15,6 +15,7 @@ alias jp='iconv -f cp932 -t utf-8'
 alias vim8='vim -c "e ++enc=utf-8"'
 alias jetpacksync='vim -c JetpackSync'
 alias simplenote='vim -c SimplenoteList'
+alias memolist='vim -c MemoList'
 
 # Docker
 alias dcb='docker compose build'
