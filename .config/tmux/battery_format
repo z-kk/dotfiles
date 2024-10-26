@@ -1,0 +1,13 @@
+#!/bin/sh
+
+battery=$(cat /sys/class/power_supply/BAT*/capacity)
+
+if [ $battery -lt 20 ]; then
+    res="#[bg=red,fg=white]${battery}%#[default]"
+elif [ $battery -lt 30 ]; then
+    res="#[bg=orange,fg=black]${battery}%#[default]"
+else
+    res="${battery}%"
+fi
+
+echo -n "$res"

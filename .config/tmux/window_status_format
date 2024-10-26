@@ -1,0 +1,13 @@
+#!/bin/sh
+
+path="#{?#{==:#{pane_current_path},$HOME},\$HOME,#{b:pane_current_path}}"
+cmd="#{pane_current_command}"
+flags="#{?window_flags,#{window_flags}, }"
+
+if [ "$1" = "current" ]; then
+    res="$cmd"
+else
+    res="#{?#{==:$cmd,ssh},ssh,$path}"
+fi
+
+echo -n "#I:${res}${flags}"
