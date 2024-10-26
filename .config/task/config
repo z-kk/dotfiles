@@ -7,5 +7,5 @@ verbose=0
 
 report.ls.columns=id,depends.indicator,recur.indicator,priority,scheduled,due,project,tags,description.count
 report.ls.labels=ID,D,R,P,Sch,Due,Project,Tags,Description
-report.ls.sort=due+,scheduled+,urgency-,project+
+report.ls.sort=priority-/,due+,scheduled+,urgency-,project+
 default.command=ls
