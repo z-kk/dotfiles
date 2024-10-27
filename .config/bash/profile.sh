@@ -37,6 +37,16 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # nim
 export PATH="$HOME/.nimble/bin:$PATH"
 
+# go
+export GOROOT="/usr/local/share/go"
+if [ -e $GOROOT ]; then
+    export PATH="$GOROOT/bin:$PATH"
+fi
+export GOPATH="$XDG_DATA_HOME/go"
+if [ -e $GOPATH ]; then
+    export PATH="$GOPATH/bin:$PATH"
+fi
+
 # local bin
 export PATH="$HOME/.local/bin:$PATH"
 
