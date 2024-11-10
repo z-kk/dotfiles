@@ -84,3 +84,33 @@ function maketexpdf() {
     mv $name-crop.pdf $name.pdf
     extractbb $name.pdf
 }
+
+function catpdf() {
+    local args=()
+    for c in {A..Z}; do
+        if [ -z "$1" ]; then
+            echo "Not contains \"cat\"" >&2
+            return
+        fi
+        if [ "$1" = "cat" ]; then
+            break
+        fi
+        args+=("$c=$1")
+        shift
+    done
+
+    local cmd=""
+    local setoutput=0
+    while [ ! -z "$1" ]; do
+        if [ "$1" = "output" ]; then
+            setoutput=1
+        fi
+        cmd="$cmd $1"
+        shift
+    done
+    if [ $setoutput -eq 0 ]; then
+        cmd="$cmd output out.pdf"
+    fi
+
+    pdftk "${args[@]}" $cmd
+}
