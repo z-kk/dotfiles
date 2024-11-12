@@ -5,7 +5,8 @@ cmd="#{pane_current_command}"
 flags="#{?window_flags,#{window_flags}, }"
 
 if [ "$1" = "current" ]; then
-    res="$cmd"
+    prefixcolor="#{?client_prefix,#[bg=orange],}"
+    res="$prefixcolor$cmd"
 else
     res="#{?#{==:$cmd,ssh},ssh,$path}"
 fi
