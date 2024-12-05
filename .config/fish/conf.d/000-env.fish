@@ -22,6 +22,9 @@ set -gx SQLITE_HISTORY "$XDG_DATA_HOME/sqlite_history"
 set -gx TASKRC "$XDG_CONFIG_HOME/task/taskrc"
 set -gx TASKDATA "$XDG_DATA_HOME/task"
 
+set -gx FISHDIR "$XDG_CONFIG_HOME/fish"
+set -gx TMUXDIR "$XDG_CONFIG_HOME/tmux"
+
 # pyenv
 set -gx PYENV_ROOT "$XDG_CONFIG_HOME/pyenv"
 test -e $PYENV_ROOT

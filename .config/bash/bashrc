@@ -1,11 +1,11 @@
 tabs 4
 
-if [ -f $XDG_CONFIG_HOME/bash/aliases.sh ]; then
-    . $XDG_CONFIG_HOME/bash/aliases.sh
+if [ -f $BDOTDIR/aliases.sh ]; then
+    . $BDOTDIR/aliases.sh
 fi
 
-if [ -f $XDG_CONFIG_HOME/bash/functions.sh ]; then
-    . $XDG_CONFIG_HOME/bash/functions.sh
+if [ -f $BDOTDIR/functions.sh ]; then
+    . $BDOTDIR/functions.sh
 fi
 
 # git

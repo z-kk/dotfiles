@@ -1,8 +1,8 @@
-abbr -a fishconf "$EDITOR $XDG_CONFIG_HOME/fish/config.fish"
-abbr -a fishfunc "$EDITOR $XDG_CONFIG_HOME/fish/functions"
+abbr -a fishconf "$EDITOR $FISHDIR/config.fish"
+abbr -a fishfunc "$EDITOR $FISHDIR/functions"
 
 abbr -a pipython pipenv run python
-abbr -a tmux command tmux -f "$XDG_CONFIG_HOME/tmux/tmux.conf"
+abbr -a tmux command tmux -f "$TMUXDIR/tmux.conf"
 
 # Vim
 abbr -a vim8 vim -c '"e ++enc=utf-8"'

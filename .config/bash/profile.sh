@@ -23,6 +23,9 @@ export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TASKDATA="$XDG_DATA_HOME/task"
 
+export BDOTDIR="$XDG_CONFIG_HOME/bash"
+export TMUXDIR="$XDG_CONFIG_HOME/tmux"
+
 # pyenv
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 if [ -e $PYENV_ROOT ]; then

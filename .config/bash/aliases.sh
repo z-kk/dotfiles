@@ -1,13 +1,13 @@
-alias bashrc='vim $XDG_CONFIG_HOME/bash/bashrc'
-alias bashpr='vim $XDG_CONFIG_HOME/bash/profile.sh'
-alias bashal='vim $XDG_CONFIG_HOME/bash/aliases.sh'
-alias bashfn='vim $XDG_CONFIG_HOME/bash/functions.sh'
+alias bashrc='vim $BDOTDIR/bashrc'
+alias bashpr='vim $BDOTDIR/profile.sh'
+alias bashal='vim $BDOTDIR/aliases.sh'
+alias bashfn='vim $BDOTDIR/functions.sh'
 
 alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
 alias pipython='pipenv run python'
 alias pipvim='pipenv run vim'
-alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
+alias tmux='tmux -f $TMUXDIR/tmux.conf'
 alias today='date "+%Y-%m-%d %H:%M:%S"'
 alias jp='iconv -f cp932 -t utf-8'
 
