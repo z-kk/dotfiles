@@ -4,3 +4,6 @@
 [submodule ".config/cheat/cheatsheets/community"]
 	path = .config/cheat/cheatsheets/community
 	url = https://github.com/cheat/cheatsheets.git
+[submodule ".config/bash/abbr"]
+	path = .config/bash/abbr
+	url = https://github.com/momo-lab/bash-abbrev-alias.git

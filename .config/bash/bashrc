@@ -1,5 +1,9 @@
 tabs 4
 
+if [ -f $BDOTDIR/abbr/abbrev-alias.plugin.bash ]; then
+    . $BDOTDIR/abbr/abbrev-alias.plugin.bash
+fi
+
 if [ -f $BDOTDIR/aliases.sh ]; then
     . $BDOTDIR/aliases.sh
 fi

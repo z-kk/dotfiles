@@ -15,7 +15,7 @@ abbr -a dcb docker compose build
 abbr -a dcu docker compose up -d
 abbr -a dcd docker compose down
 abbr -a dce docker compose exec
-abbr -a dcr docker compose run
+abbr -a dcr docker compose run --rm
 abbr -a dcl docker compose logs
 abbr -a dcp docker compose ps
 
