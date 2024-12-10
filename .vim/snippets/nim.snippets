@@ -13,16 +13,16 @@ snippet Tasks
 
 	# Before / After
 
-	before buid:
+	before build:
 		let infoFile = srcDir / bin[0] & "pkg" / "nimbleInfo.nim"
 		infoFile.parentDir.mkDir
 		infoFile.writeFile("""
 			const
-				AppName* = "$#"
-				Version* = "$#"
+				AppName* = "\$#"
+				Version* = "\$#"
 		""".dedent % [bin[0], version])
 
-	after buid:
+	after build:
 		let infoFile = srcDir / bin[0] & "pkg" / "nimbleInfo.nim"
 		infoFile.writeFile("""
 			const
