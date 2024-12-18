@@ -27,13 +27,31 @@ if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init -)"
 fi
 
+# prompt color
+CLEAR=0
+BLACK=30
+RED=31
+GREEN=32
+YELLOW=33
+BLUE=34
+MAGENTA=35
+CYAN=36
+WHITE=37
+
+USERCOLOR=$GREEN
+if [ "$USER" = "git" ]; then
+    USERCOLOR=$YELLOW
+elif [ -n "$SSH_CLIENT" ]; then
+    USERCOLOR=$CYAN
+fi
+
 if [[ $OSTYPE =~ linux ]]; then
     # linux
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;${USERCOLOR}m\]\u@\h\[\033[${CLEAR}m\]:\[\033[01;${BLUE}m\]\w'
     if [ -f $GIT_PROMPT_PATH ]; then
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[36m\]$(__git_ps1 "(%s)")\[\033[0m\]\$ '
-    else
-        PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0m\]\$ '
+        PS1=$PS1'\[\033[${CYAN}m\]$(__git_ps1 "(%s)")'
     fi
+    PS1=$PS1'\[\033[${CLEAR}m\]\$ '
     # wsl
     if [[ -n "$IS_WSL" ]]; then
         removepath "Windows/System32/OpenSSH"
@@ -41,13 +59,13 @@ if [[ $OSTYPE =~ linux ]]; then
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
     # cygwin
+    PS1='\[\e]0;\w\a\]\n\[\e[${USERCOLOR}m\]\u@\h \[\e[${YELLOW}m\]\w'
     if [ -f $GIT_PROMPT_PATH ]; then
-        PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[36m\]$(__git_ps1 " (%s)")\[\e[0m\]\n\$ '
-    else
-        PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
+        PS1=$PS1'\[\e[${CYAN}m\]$(__git_ps1 " (%s)")'
     fi
+    PS1=$PS1'\[\e[${CLEAR}m\]\n\$ '
 elif [[ $OSTYPE =~ darwin ]]; then
     # mac
     # コマンドラインの色設定
-    PS1="\[\033[32m\]\u@\h\[\033[0m\]:\[\033[33m\]\w\[\033[0m\]\$ "
+    PS1="\[\033[${USERCOLOR}m\]\u@\h\[\033[0m\]:\[\033[${YELLOW}m\]\w\[\033[0m\]\$ "
 fi
