@@ -11,11 +11,27 @@ abbrev-alias tmux='tmux -f $TMUXDIR/tmux.conf'
 abbrev-alias today='date "+%Y-%m-%d %H:%M:%S"'
 abbrev-alias jp='iconv -f cp932 -t utf-8'
 
+abbrev-alias service='sudo service'
+abbrev-alias mount='sudo mount'
+abbrev-alias umount='sudo umount'
+abbrev-alias apt='sudo apt'
+abbrev-alias shutdown='sudo shutdown'
+
 # Vim
 alias vim8='vim -c "e ++enc=utf-8"'
 alias jetpacksync='vim -c JetpackSync'
 alias simplenote='vim -c SimplenoteList'
 alias memolist='vim -c MemoList'
+
+# Git
+abbrev-alias gs='git status -s'
+abbrev-alias gl='git log --oneline'
+abbrev-alias gla="git log --oneline --all --graph --date=short --pretty=format:'%C(auto)%h %C(magenta)%cd%C(auto)%d %s %C(green)<%cn>' -10"
+abbrev-alias gb='git branch -a'
+abbrev-alias gc='git checkout'
+abbrev-alias gcm='git commit -m "'
+abbrev-alias gca='git commit --amend --no-edit'
+abbrev-alias gd='git diff'
 
 # Docker
 abbrev-alias dcb='docker compose build'
@@ -33,6 +49,7 @@ if [[ $OSTYPE =~ linux ]]; then
     if [[ ! -z $IS_WSL ]]; then
         # wsl
         alias open='wslopen'
+        abbrev-alias -u shutdown
         alias shutdown='wslshutdown'
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
