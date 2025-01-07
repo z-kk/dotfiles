@@ -4,11 +4,12 @@
 !/git
 !/shell
 !/bash
+!/fish
+!/zsh
 !/cheat
 !/readline
 !/wgetrc
 !/tmux
 !/byobu
-!/fish
 !/task
 taskrc
