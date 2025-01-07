@@ -28,6 +28,7 @@ export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TASKDATA="$XDG_DATA_HOME/task"
 
 export BDOTDIR="$XDG_CONFIG_HOME/bash"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export TMUXDIR="$XDG_CONFIG_HOME/tmux"
 
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
