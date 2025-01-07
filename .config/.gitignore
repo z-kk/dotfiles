@@ -2,6 +2,7 @@
 !/.gitignore
 
 !/git
+!/shell
 !/bash
 !/cheat
 !/readline

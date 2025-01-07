@@ -4,12 +4,12 @@ if [ -f $BDOTDIR/abbr/abbrev-alias.plugin.bash ]; then
     . $BDOTDIR/abbr/abbrev-alias.plugin.bash
 fi
 
-if [ -f $BDOTDIR/aliases.sh ]; then
-    . $BDOTDIR/aliases.sh
+if [ -f $BDOTDIR/aliases.bash ]; then
+    . $BDOTDIR/aliases.bash
 fi
 
-if [ -f $BDOTDIR/functions.sh ]; then
-    . $BDOTDIR/functions.sh
+if [ -f $XDG_CONFIG_HOME/shell/functions.sh ]; then
+    . $XDG_CONFIG_HOME/shell/functions.sh
 fi
 
 # git
