@@ -6,6 +6,9 @@
 !/bash
 !/fish
 !/zsh
+/zsh/.zcompdump
+/zsh/zi/*
+!/zsh/zi/bin
 !/cheat
 !/readline
 !/wgetrc
