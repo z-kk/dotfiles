@@ -7,3 +7,6 @@
 [submodule ".config/bash/abbr"]
 	path = .config/bash/abbr
 	url = https://github.com/momo-lab/bash-abbrev-alias.git
+[submodule ".config/zsh/zi/bin"]
+	path = .config/zsh/zi/bin
+	url = https://github.com/z-shell/zi.git
