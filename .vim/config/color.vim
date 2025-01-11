@@ -64,6 +64,7 @@ elseif g:colors_name == 'radicalgoodspeed'
 
   hi Folded ctermfg=244 guifg=#555753 guibg=NONE
   hi Todo ctermbg=237 guibg=#696969
+  hi Directory ctermfg=75 guifg=#729fcf
   hi Type ctermfg=135 guifg=#ae5ff2
   hi Keyword ctermfg=226 guifg=#fff847
   hi Special ctermfg=111 guifg=#7fa7f8
@@ -82,3 +83,6 @@ endif
 augroup ColorCmd
   autocmd ColorScheme * runtime! config/color.vim
 augroup END
+
+command SynName echo synIDattr(synID(line('.'), col('.'), 1), 'name')
+command SynNameTrans echo synIDattr(synIDtrans(synID(line('.'), col('.'), 1)), 'name')

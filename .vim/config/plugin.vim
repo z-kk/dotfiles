@@ -62,6 +62,7 @@ command Outline Unite -vertical outline
 Jetpack 'lambdalisue/fern.vim'
 let g:fern#default_hidden = 1
 Jetpack 'lambdalisue/fern-git-status.vim'
+Jetpack 'lambdalisue/vim-fern-hijack'
 
 Jetpack 'AndrewRadev/linediff.vim'
 
