@@ -15,6 +15,7 @@ abbr shutdown='sudo shutdown'
 # Vim
 alias vim8='vim -c "e ++enc=utf-8"'
 alias jetpacksync='vim -c JetpackSync'
+abbr unite='vim -c "Unite menu"'
 alias simplenote='vim -c SimplenoteList'
 alias memolist='vim -c MemoList'
 

@@ -43,8 +43,27 @@ if has('vim_starting')
 endif
 
 " ---- XDG ----
+if $XDG_CONFIG_HOME == ""
+  let $XDG_CONFIG_HOME = $HOME . "/.config"
+endif
+if has('win32') || has('win64')
+  if $XDG_CACHE_HOME == ""
+    let $XDG_CACHE_HOME = $APPDATA
+  endif
+  if $XDG_DATA_HOME == ""
+    let $XDG_DATA_HOME = $LOCALAPPDATA
+  endif
+endif
 if !has('nvim')
   set viminfofile=$XDG_CACHE_HOME/vim/viminfo
+endif
+
+" ---- posh ----
+if has('win32') || has('win64')
+  set shell=pwsh.exe
+  set shellcmdflag=-c
+  set shellquote=\"
+  set shellxquote=
 endif
 
 filetype off
@@ -52,4 +71,6 @@ runtime! config/plugin.vim
 runtime! config/color.vim
 runtime! config/indent.vim
 runtime! config/mapping.vim
+runtime! config/abbrev.vim
+runtime! config/unite.vim
 runtime! config/optional.vim

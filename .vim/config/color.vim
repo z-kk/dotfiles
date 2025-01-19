@@ -58,6 +58,9 @@ elseif g:colors_name == 'radicalgoodspeed'
   hi CursorLine ctermbg=17 guibg=#003c70
   hi StatusLine ctermfg=233 ctermbg=45 guifg=#0e1416 guibg=#00ccff
 
+  hi Pmenu ctermfg=15 ctermbg=60 guibg=#666666 guifg=#eeeeec
+  hi PmenuSel ctermfg=0 ctermbg=214 guibg=#fcaf3e guifg=#000000
+
   hi DiffAdd ctermfg=NONE guifg=NONE
   hi DiffChange ctermfg=NONE ctermbg=18 guifg=NONE guibg=#204a87
   hi DiffText ctermfg=NONE guifg=NONE

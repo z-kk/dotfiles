@@ -13,6 +13,7 @@ abbr -a shutdown sudo shutdown
 # Vim
 abbr -a vim8 vim -c '"e ++enc=utf-8"'
 abbr -a jetpacksync vim -c JetpackSync
+abbr -a unite vim -c '"Unite menu"'
 abbr -a simplenote vim -c SimplenoteList
 abbr -a memolist vim -c MemoList
 
