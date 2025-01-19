@@ -14,6 +14,9 @@ nnoremap <leader>fn :Fern .<CR>
 nnoremap <leader>ff :Fern . -reveal=%<CR>
 nnoremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>
 
+autocmd FileType * nmap <buffer> gx <Plug>(openbrowser-smart-search)
+autocmd FileType * vmap <buffer> gx <Plug>(openbrowser-smart-search)
+
 nnoremap <leader>mn :MemoNew<CR>
 nnoremap <leader>ml :MemoList<CR>
 nnoremap <leader>mg :MemoGrep<CR>
