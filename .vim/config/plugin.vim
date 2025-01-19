@@ -4,6 +4,7 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 "let g:jetpack_download_method = 'curl'
 
 Jetpack 'vim-jp/vimdoc-ja'
+"Jetpack 'embear/vim-localvimrc'
 
 " Git
 Jetpack 'tpope/vim-fugitive'
@@ -63,10 +64,12 @@ let g:fern#default_hidden = 1
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/vim-fern-hijack'
 
+Jetpack 'tyru/open-browser.vim'
+
 Jetpack 'AndrewRadev/linediff.vim'
 
 " filetype
-Jetpack 'plasticboy/vim-markdown'
+Jetpack 'preservim/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
 Jetpack 'mattn/vim-maketable'
