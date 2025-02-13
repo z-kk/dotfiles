@@ -43,6 +43,9 @@ set -gx GOPATH "$XDG_DATA_HOME/go"
 test -e "$GOPATH"
 and set -ax fish_user_paths "$GOPATH/bin"
 
+# nnn
+set -gx NNN_COLORS "#0b0a0c0d;3265"
+
 # local bin
 set -ax fish_user_paths "$HOME/.local/bin"
 
@@ -54,6 +57,7 @@ switch (uname)
         # WSL
         test (grep -i microsoft /proc/version)
         and set -x IS_WSL 1
+        and set -gx NNN_OPENER "wsl-open"
     case Darwin
         # mac
         set -gx LSCOLORS gxfxcxdxbxegedabagacad  # lsの色設定
