@@ -62,4 +62,5 @@ runtime! config/plugin.vim
 runtime! config/color.vim
 runtime! config/indent.vim
 runtime! config/mapping.vim
+runtime! config/abbrev.vim
 runtime! config/optional.vim
