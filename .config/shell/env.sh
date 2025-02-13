@@ -35,3 +35,10 @@ export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export DENO_INSTALL="$HOME/.deno"
 export GOROOT="/usr/local/share/go"
 export GOPATH="$XDG_DATA_HOME/go"
+
+export NNN_COLORS="#0b0a0c0d;3265"
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_PLUG="p:preview-tui"
+if [[ $IS_WSL ]]; then
+    export NNN_OPENER="wsl-open"
+fi

@@ -63,6 +63,8 @@ let g:fern#default_hidden = 1
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/vim-fern-hijack'
 
+Jetpack 'mcchrish/nnn.vim'
+
 Jetpack 'tyru/open-browser.vim'
 
 Jetpack 'AndrewRadev/linediff.vim'
