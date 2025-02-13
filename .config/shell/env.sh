@@ -38,3 +38,13 @@ export GOROOT="/usr/local/share/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
+export NNN_OPTS="AdHio"
+export NNN_COLORS="#0b0a0c0d;3265"
+export NNN_FIFO="/tmp/nnn.fifo"
+export NNN_BMS="d:$HOME/Downloads;b:$XDG_DATA_HOME/bookmarks"
+export NNN_PLUG="p:preview-tui"
+if [[ $IS_WSL ]]; then
+    export NNN_OPENER="wsl-open"
+    export NNN_BMS="d:/mnt/c/Users/$USER/Downloads;b:$XDG_DATA_HOME/bookmarks"
+fi

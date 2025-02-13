@@ -68,6 +68,10 @@ Jetpack 'lambdalisue/vim-fern-hijack'
 Jetpack 'lambdalisue/vim-fern-bookmark'
 let g:fern#scheme#bookmark#store#file = $XDG_CONFIG_HOME . "/fern/bookmark.json"
 
+if executable("nnn")
+  Jetpack 'mcchrish/nnn.vim'
+endif
+
 Jetpack 'tyru/open-browser.vim'
 
 Jetpack 'AndrewRadev/linediff.vim'
