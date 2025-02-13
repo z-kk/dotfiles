@@ -36,6 +36,73 @@ function git_latest_ver() {
     echo $(curl -s https://api.github.com/repos/$REPO/releases/latest | jq -r .tag_name)
 }
 
+function n() {
+    # Block nesting of nnn in subshells
+    [ "${NNNLVL:-0}" -eq 0 ] || {
+        echo "nnn is already running"
+        return
+    }
+
+    # The behaviour is set to cd on quit (nnn checks if NNN_TMPFILE is set)
+    # If NNN_TMPFILE is set to a custom path, it must be exported for nnn to
+    # see. To cd on quit only on ^G, remove the "export" and make sure not to
+    # use a custom path, i.e. set NNN_TMPFILE *exactly* as follows:
+    NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+    #export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
+
+    # The command builtin allows one to alias nnn to n, if desired, without
+    # making an infinitely recursive alias
+    command nnn "$@"
+
+    [ ! -f "$NNN_TMPFILE" ] || {
+        . "$NNN_TMPFILE"
+        rm -f -- "$NNN_TMPFILE" > /dev/null
+    }
+}
+
+LF='
+'
+function nopen() {
+    local IFS=$LF
+    for x in $(command nnn -p -); do
+        open "$x"
+    done
+}
+
+function ndocker() {
+    echo -n "docker compose command [up]: "
+    if [[ $(ps -o cmd= -p $$) =~ "zsh" ]]; then
+        read -A readcmd
+    else
+        read readcmd
+    fi
+    local cmd=()
+    for c in $readcmd; do
+        cmd+=($c)
+    done
+    # default: docker compose up -d
+    if [ -z $cmd ]; then
+        cmd=("up" "-d")
+    fi
+
+    # check $HOME/docker dir exists
+    local dir="$HOME/docker"
+    if [ ! -d "$dir" ]; then
+        dir=""
+    fi
+
+    local IFS=$LF
+    for x in $(command nnn -p - "$dir"); do
+        if [ -d "$x" ]; then
+            x="$x"/$(command ls "$x" | grep docker-compose)
+        fi
+        if [[ ! "$x" =~ "docker-compose" ]]; then
+            continue
+        fi
+        docker compose -f "$x" ${cmd[@]}
+    done
+}
+
 function wslopen() {
     local args=()
     for arg; do

@@ -47,6 +47,13 @@ and set -ax fish_user_paths "$GOPATH/bin"
 # vim
 set -gx VIMINIT 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
+# nnn
+set -gx NNN_OPTS "AdHio"
+set -gx NNN_COLORS "#0b0a0c0d;3265"
+set -gx NNN_FIFO "/tmp/nnn.fifo"
+set -gx NNN_BMS "d:$HOME/Downloads;b:$XDG_DATA_HOME/bookmarks"
+set -gx NNN_PLUG "p:preview-tui"
+
 # local bin
 set -ax fish_user_paths "$HOME/.local/bin"
 
@@ -58,6 +65,8 @@ switch (uname)
         # WSL
         test (grep -i microsoft /proc/version)
         and set -x IS_WSL 1
+        and set -gx NNN_OPENER "wsl-open"
+        and set -gx NNN_BMS "d:/mnt/c/Users/$USER/Downloads;b:$XDG_DATA_HOME/bookmarks"
     case Darwin
         # mac
         set -gx LSCOLORS gxfxcxdxbxegedabagacad  # lsの色設定
