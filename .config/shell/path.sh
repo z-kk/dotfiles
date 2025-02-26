@@ -9,6 +9,8 @@ fi
 
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+export PATH="$CARGO_HOME/bin:$PATH"
+
 export PATH="$HOME/.nimble/bin:$PATH"
 
 export PATH="$GOROOT/bin:$PATH"

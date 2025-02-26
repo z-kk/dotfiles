@@ -40,6 +40,8 @@ export TMUXDIR="$XDG_CONFIG_HOME/tmux"
 
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export DENO_INSTALL="$HOME/.deno"
+export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOROOT="/usr/local/share/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
