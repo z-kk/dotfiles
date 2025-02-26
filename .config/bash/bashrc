@@ -27,6 +27,11 @@ if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init -)"
 fi
 
+# wave term
+if [ -x "$(command -v wsh)" ]; then
+    wsh setmeta cmd:closeonexitforce=true > /dev/null
+fi
+
 # prompt color
 CLEAR=0
 BLACK=30
