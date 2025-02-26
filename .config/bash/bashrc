@@ -69,6 +69,11 @@ if [ -x "$(command -v zoxide)" ]; then
     eval "$(zoxide init bash)"
 fi
 
+# wave term
+if [ -x "$(command -v wsh)" ]; then
+    wsh setmeta cmd:closeonexitforce=true > /dev/null
+fi
+
 # prompt color
 CLEAR=0
 BLACK=30
