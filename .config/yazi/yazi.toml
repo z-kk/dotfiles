@@ -9,11 +9,22 @@ edit = [
 	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true, for = "unix" },
 	{ run = "%EDITOR% %s", desc = "%EDITOR%", block = true, for = "windows" },
 ]
+wshview = [
+	{ run = "wsh view %s", desc = "wave term view", block = true },
+]
 
 [open]
 prepend_rules = [
+	# Folder
+	{ url = "*/", use = [ "edit", "open", "wshview", "reveal" ] },
 	# Text
-	{ mime = "text/*", use = [ "open", "edit", "reveal" ] },
+	{ mime = "text/*", use = [ "open", "edit", "wshview", "reveal" ] },
+	# Image
+	{ mime = "image/*", use = [ "open", "wshview", "reveal" ] },
+	# JSON
+	{ mime = "application/{json,ndjson}", use = [ "edit", "wshview", "reveal" ] },
+	# Fallback
+	{ url = "*", use = [ "open", "wshview", "reveal" ] },
 ]
 
 [plugin]

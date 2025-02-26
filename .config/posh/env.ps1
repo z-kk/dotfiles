@@ -3,6 +3,9 @@ foreach ($dir in $gnuWin32bin) {
     Prepend-Path $dir
 }
 Prepend-Path "C:\Program Files (x86)\GnuWin32\bin"
+if ("$env:WAVETERM") {
+    Prepend-Path "$env:WAVETERM_WSHBINDIR"
+}
 Prepend-Path "$HOME\.local\bin"
 
 if (Get-Command pwsh -ErrorAction SilentlyContinue) {
