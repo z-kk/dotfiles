@@ -20,3 +20,8 @@ autocmd FileType * vmap <buffer> gx <Plug>(openbrowser-smart-search)
 nnoremap <leader>mn :MemoNew<CR>
 nnoremap <leader>ml :MemoList<CR>
 nnoremap <leader>mg :MemoGrep<CR>
+
+nnoremap <leader>uf :Unite file<CR>
+nnoremap <leader>ub :Unite buffer<CR>
+nnoremap <leader>um :Unite menu<CR>
+nnoremap <leader>uo :Unite outline<CR>

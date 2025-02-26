@@ -57,7 +57,6 @@ Jetpack 'tomtom/tlib_vim'
 " file utils
 Jetpack 'Shougo/unite.vim'
 Jetpack 'Shougo/unite-outline'
-command Outline Unite -vertical outline
 
 Jetpack 'lambdalisue/fern.vim'
 let g:fern#default_hidden = 1
