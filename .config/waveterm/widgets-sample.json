@@ -1,0 +1,75 @@
+{
+    "defwidget@terminal": {
+        "display:order": -6,
+        "icon": "square-terminal",
+        "color": "var(--conn-icon-color-5",
+        "label": "terminal",
+        "blockdef": {
+            "meta": {
+                "view": "term",
+                "controller": "shell"
+            }
+        }
+    },
+    "debian": {
+        "display:order": -5,
+        "icon": "brands@debian",
+        "color": "var(--conn-icon-color-4",
+        "label": "Debian",
+        "blockdef": {
+            "meta": {
+                "view": "term",
+                "controller": "shell",
+                "connection": "wsl://Debian",
+                "cmd:closeonexitforce": true
+            }
+        }
+    },
+    "defwidget@files": {
+        "display:order": -4,
+        "icon": "folder",
+        "color": "var(--conn-icon-color-6",
+        "label": "files",
+        "blockdef": {
+            "meta": {
+                "view": "term",
+                "controller": "cmd",
+                "cmd": "yazi",
+                "cmd:closeonexit": true
+            }
+        }
+    },
+    "defwidget@web": {
+        "display:order": -3,
+        "icon": "globe",
+        "color": "var(--conn-icon-color-1",
+        "label": "web",
+        "blockdef": {
+            "meta": {
+                "view": "web"
+            }
+        }
+    },
+    "defwidget@ai": {
+        "display:order": -2,
+        "icon": "sparkles",
+        "color": "var(--conn-icon-color-7",
+        "label": "ai",
+        "blockdef": {
+            "meta": {
+                "view": "waveai"
+            }
+        }
+    },
+    "defwidget@sysinfo": {
+        "display:order": -1,
+        "icon": "chart-line",
+        "color": "var(--conn-icon-color-8",
+        "label": "sysinfo",
+        "blockdef": {
+            "meta": {
+                "view": "sysinfo"
+            }
+        }
+    }
+}

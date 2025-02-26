@@ -1,0 +1,9 @@
+{
+    "autoupdate:channel": "latest",
+    "app:defaultnewblock": "launcher",
+    "app:ctrlvpaste": false,
+    "term:fontfamily": "Bizin Gothic NF",
+    "term:fontsize": 14,
+    "term:theme": "campbell",
+    "web:defaultsearch": "https://duckduckgo.com/?q={query}"
+}
