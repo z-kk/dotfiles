@@ -43,7 +43,6 @@ if [[ $OSTYPE =~ linux ]]; then
 
     if [[ ! -z $IS_WSL ]]; then
         # wsl
-        alias open='wslopen'
         abbr -u shutdown
         alias shutdown='wslshutdown'
     fi

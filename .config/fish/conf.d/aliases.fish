@@ -39,7 +39,6 @@ switch (uname)
     case Linux
         abbr -a logoff gnome-session-quit
         if test $IS_WSL
-            alias open wslopen
             abbr -e shutdown
             alias shutdown wslshutdown
         end
