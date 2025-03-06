@@ -2,7 +2,8 @@ abbr -a fishconf "$EDITOR $FISHDIR/config.fish"
 abbr -a fishfunc "$EDITOR $FISHDIR/functions"
 
 abbr -a pipython pipenv run python
-abbr -a tmux command tmux -f "$TMUXDIR/tmux.conf"
+#abbr -a tmux command tmux -f "$TMUXDIR/tmux.conf"
+abbr -a --set-cursor opensslenc openssl enc % -aes-256-cbc -pbkdf2 -salt -iter 99999 -k pass
 
 abbr -a service sudo service
 abbr -a mount sudo mount
@@ -26,6 +27,9 @@ abbr -a gc git checkout
 abbr -a --set-cursor gcm git commit -m '"%"'
 abbr -a gca git commit --amend --no-edit
 abbr -a gd git diff
+abbr -a gr git rebase
+abbr -a grs git rebase --skip
+abbr -a grc git rebase --continue
 
 # Docker
 abbr -a dcb docker compose build

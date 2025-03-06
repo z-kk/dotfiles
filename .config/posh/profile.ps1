@@ -1,5 +1,6 @@
 . $HOME\.config\posh\env.ps1
 . $HOME\.config\posh\functions.ps1
+. $HOME\.config\posh\aliases.ps1
 
 # PS color config
 Set-PSReadLineOption -Colors @{
@@ -21,9 +22,6 @@ Set-Theme onehalf.minimal
 
 # git prompt
 Import-Module posh-git
-
-# alias
-Set-Alias -Name open -Value start
 
 # zoxide
 if (Get-Command zoxide -ErrorAction SilentlyContinue) {
