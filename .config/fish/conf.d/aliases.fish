@@ -26,6 +26,9 @@ abbr -a gc git checkout
 abbr -a --set-cursor gcm git commit -m '"%"'
 abbr -a gca git commit --amend --no-edit
 abbr -a gd git diff
+abbr -a gr git rebase
+abbr -a grs git --skip
+abbr -a grc git --continue
 
 # Docker
 abbr -a dcb docker compose build

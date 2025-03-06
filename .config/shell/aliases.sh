@@ -28,6 +28,9 @@ abbr gc='git checkout'
 abbr gcm='git commit -m "'
 abbr gca='git commit --amend --no-edit'
 abbr gd='git diff'
+abbr gr='git rebase'
+abbr grs='git rebase --skip'
+abbr grc='git rebase --continue'
 
 # Docker
 abbr dcb='docker compose build'
