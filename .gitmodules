@@ -1,5 +1,5 @@
-[submodule ".vim/pack/jetpack/opt/vim-jetpack"]
-	path = .vim/pack/jetpack/opt/vim-jetpack
+[submodule "vim-jetpack"]
+	path = .config/vim/pack/jetpack/opt/vim-jetpack
 	url = https://github.com/tani/vim-jetpack.git
 [submodule ".config/cheat/cheatsheets/community"]
 	path = .config/cheat/cheatsheets/community

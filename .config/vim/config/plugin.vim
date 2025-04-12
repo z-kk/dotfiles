@@ -1,5 +1,5 @@
 packadd vim-jetpack
-call jetpack#begin()
+call jetpack#begin($XDG_CONFIG_HOME . "/vim")
 Jetpack 'tani/vim-jetpack', {'opt': 1}
 "let g:jetpack_download_method = 'curl'
 
@@ -18,7 +18,7 @@ let g:SimplenoteUsername = ""
 
 " Memolist
 Jetpack 'glidenote/memolist.vim'
-let g:memolist_path = "$XDG_DATA_HOME/memo"
+let g:memolist_path = $XDG_DATA_HOME . "/memo"
 let g:memolist_memo_suffix = "md"
 
 " colorscheme
