@@ -48,6 +48,7 @@ au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#source
 Jetpack 'prabirshrestha/asyncomplete-lsp.vim'
 Jetpack 'prabirshrestha/vim-lsp'
 "let g:lsp_diagnostics_virtual_text_enabled = 0
+"let g:lsp_diagnostics_echo_cursor = 1
 Jetpack 'mattn/vim-lsp-settings'
 
 " snippet
