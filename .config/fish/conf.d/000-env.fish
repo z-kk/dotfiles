@@ -43,6 +43,9 @@ set -gx GOPATH "$XDG_DATA_HOME/go"
 test -e "$GOPATH"
 and set -ax fish_user_paths "$GOPATH/bin"
 
+# vim
+set -gx VIMINIT 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+
 # nnn
 set -gx NNN_COLORS "#0b0a0c0d;3265"
 

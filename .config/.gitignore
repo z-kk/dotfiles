@@ -10,6 +10,7 @@
 /zsh/zi/*
 !/zsh/zi/bin
 !/posh
+!/vim
 !/cheat
 !/readline
 !/wgetrc
