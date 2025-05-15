@@ -9,6 +9,7 @@
 /zsh/.zcompdump
 /zsh/zi/*
 !/zsh/zi/bin
+!/posh
 !/cheat
 !/readline
 !/wgetrc
