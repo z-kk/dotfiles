@@ -2,7 +2,8 @@ abbr -a fishconf "$EDITOR $FISHDIR/config.fish"
 abbr -a fishfunc "$EDITOR $FISHDIR/functions"
 
 abbr -a pipython pipenv run python
-abbr -a tmux command tmux -f "$TMUXDIR/tmux.conf"
+#abbr -a tmux command tmux -f "$TMUXDIR/tmux.conf"
+abbr -a --set-cursor opensslenc openssl enc % -aes-256-cbc -pbkdf2 -salt -iter 99999 -k pass
 
 abbr -a service sudo service
 abbr -a mount sudo mount

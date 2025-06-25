@@ -3,6 +3,7 @@ alias grep='grep --color=auto'
 abbr pipython='pipenv run python'
 abbr pipvim='pipenv run vim'
 #abbr tmux='tmux -f $TMUXDIR/tmux.conf'
+abbr opensslenc='openssl enc -aes-256-cbc -pbkdf2 -salt -iter 99999 -k ${pass:-pass} -e'
 abbr today='date "+%Y-%m-%d %H:%M:%S"'
 alias jp='iconv -f cp932 -t utf-8'
 
