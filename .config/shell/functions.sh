@@ -25,6 +25,17 @@ function removepath() {
     export PATH=$(echo -n $PATH | tr ":" "\n" | grep -v "$1" | tr "\n" ":" | sed "s/:$//")
 }
 
+function git_latest_ver() {
+    # GitHubから最新リリースバージョンを取得
+    local REPO
+    if [ $# -eq 1 ]; then
+        REPO=$1
+    elif [ $# -eq 2 ]; then
+        REPO=$1/$2
+    fi
+    echo $(curl -s https://api.github.com/repos/$REPO/releases/latest | jq -r .tag_name)
+}
+
 function wslopen() {
     local args=()
     for arg; do
