@@ -1,0 +1,20 @@
+[mgr]
+
+prepend_keymap = [
+	{ on = "q", run = "close --no-cwd-file", desc = "Close the current tab, or quit if it's last without outputting cwd-file" },
+	{ on = "Q", run = "quit", desc = "Quit the process" },
+	{ on = "~", run = "cd ~", desc = "Go home" },
+	{ on = "`", run = "cd /", desc = "Go root" },
+	{ on = [ "g", "b" ], run = "cd $XDG_DATA_HOME/bookmarks", desc = "Go bookmarks", for = "unix" },
+	{ on = [ "g", "b" ], run = "cd %LOCALAPPDATA%/bookmarks", desc = "Go bookmarks", for = "windows" },
+	{ on = "!", run = 'shell "$SHELL" --block', desc = "Open $SHELL here", for = "unix" },
+	{ on = "!", run = 'shell "pwsh.exe" --block', desc = "Open pwsh here", for = "windows" },
+	{ on = "e", run = 'shell "${EDITOR:-vi} %s" --block', desc = "Edit file", for = "unix" },
+	{ on = "e", run = 'shell "vim.exe %s" --block', desc = "Edit file", for = "windows" },
+
+	{ on = "<Enter>", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+	{ on = "T", run = "plugin toggle-pane min-preview", desc = "Show or hide the preview pane" },
+	{ on = [ "c", "m" ], run = "plugin chmod", desc = "Chmod on selected files" },
+	{ on = [ "c", "p" ], run = "plugin command", desc = "Yazi command prompt" },
+	{ on = [ "c", ":" ], run = "plugin custom-shell -- auto --wait", desc = "custom-shell as default, waits for user" },
+]
