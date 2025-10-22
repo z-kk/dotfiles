@@ -1,0 +1,29 @@
+[flavor]
+
+dark = "catppuccin-frappe"
+
+[filetype]
+
+rules = [
+	# Image
+	{ mime = "image/*", fg = "#81c8be" },
+	# Media
+	{ mime = "{audio,video}/*", fg = "#e5c890" },
+	# Archive
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "#f4b8e4" },
+	# Document
+	{ mime = "application/{pdf,doc,rtf}", fg = "#a6d189" },
+	# Virtual file system
+	{ mime = "vfs/{absent,stale}", fg = "#949cbb" },
+	# Broken symlinks
+	{ url = "*", is = "orphan", fg = "#cd3131" },
+	{ url = "*/", is = "orphan", fg = "#cd3131" },
+	# Symlinks
+	{ url = "*", is = "link", fg = "#2cccee" },
+	{ url = "*/", is = "link", fg = "#2cccee" },
+	# Executable
+	{ url = "*", is = "exec", fg = "#0dbc79" },
+	# Fallback
+	{ url = "*", fg = "#e6e8f5" },
+	{ url = "*/", fg = "#8caaee" }
+]

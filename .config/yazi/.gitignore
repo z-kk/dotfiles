@@ -1,0 +1,8 @@
+/*
+!/.gitignore
+!/.editorconfig
+
+!/init.lua
+!/yazi.toml
+!/keymap.toml
+!/theme.toml

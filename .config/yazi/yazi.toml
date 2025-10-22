@@ -1,0 +1,23 @@
+[mgr]
+sort_by = "natural"
+linemode = "mtime"
+show_hidden = true
+show_symlink = false
+
+[opener]
+edit = [
+	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true, for = "unix" },
+	{ run = "vim.exe %s", desc = "vim", block = true, for = "windows" },
+]
+
+[open]
+prepend_rules = [
+	# Text
+	{ mime = "text/*", use = [ "open", "edit", "reveal" ] },
+]
+
+[plugin]
+prepend_fetchers = [
+	{ id = "git", url = "*", run = "git" },
+	{ id = "git", url = "*/", run = "git" },
+]
