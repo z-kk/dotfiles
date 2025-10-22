@@ -20,6 +20,8 @@ autocmd FileType fern nmap <buffer> o y:!open '<C-r>"'<CR><CR>
 autocmd FileType fern nmap <buffer> ] <Plug>(fern-action-cd:cursor)
 autocmd FileType fern nmap <buffer> [ <Plug>(fern-action-cd:root)
 
+nnoremap <leader>y :Yazi<CR>
+
 autocmd FileType * nmap <buffer> gx <Plug>(openbrowser-smart-search)
 autocmd FileType * vmap <buffer> gx <Plug>(openbrowser-smart-search)
 
