@@ -8,8 +8,15 @@ cnoremap <C-r>, <C-r>"
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<Plug>snipMateNextOrTrigger"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<Plug>snipMateBack"
 
-noremap <F12> :LspDefinition <CR>
+" Git
+noremap <leader>g :Git<CR>
 
+" Memolist
+nnoremap <leader>mn :MemoNew<CR>
+nnoremap <leader>ml :MemoList<CR>
+nnoremap <leader>mg :MemoGrep<CR>
+
+" Fern
 nnoremap <leader>fn :Fern .<CR>
 nnoremap <leader>ff :Fern . -reveal=%<CR>
 nnoremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>
@@ -25,14 +32,14 @@ autocmd FileType fern nmap <buffer> fq <Plug>(fern-action-preview:auto:disable)<
 
 nnoremap <leader>y :Yazi<CR>
 
+" Org
+nnoremap <leader>eo :edit $XDG_DATA_HOME/org<CR>
+
+noremap <F12> :LspDefinition <CR>
+noremap gd :LspDefinition <CR>
+
 autocmd FileType * nmap <buffer> gx <Plug>(openbrowser-smart-search)
 autocmd FileType * vmap <buffer> gx <Plug>(openbrowser-smart-search)
-
-nnoremap <leader>mn :MemoNew<CR>
-nnoremap <leader>ml :MemoList<CR>
-nnoremap <leader>mg :MemoGrep<CR>
-
-nnoremap <leader>eo :edit $XDG_DATA_HOME/org<CR>
 
 nnoremap <leader>uf :Unite file<CR>
 nnoremap <leader>ub :Unite buffer<CR>

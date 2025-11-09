@@ -18,6 +18,12 @@ abbr -a unite vim -c '"Unite menu"'
 abbr -a simplenote vim -c SimplenoteList
 abbr -a memolist vim -c MemoList
 
+# Neovim
+abbr -a nvim8 nvim -c '"e ++enc=utf-8"'
+abbr -a njetpacksync nvim -c JetpackSync
+abbr -a nsimplenote nvim -c SimplenoteList
+abbr -a nmemolist nvim -c MemoList
+
 #Git
 abbr -a gs git status -s
 abbr -a gl git log --oneline

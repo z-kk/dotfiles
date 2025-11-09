@@ -37,7 +37,7 @@ export DENO_INSTALL="$HOME/.deno"
 export GOROOT="/usr/local/share/go"
 export GOPATH="$XDG_DATA_HOME/go"
 
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
+#export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
 export _ZO_EXCLUDE_DIRS="$HOME:$XDG_DATA_HOME/bookmarks/*"
 
