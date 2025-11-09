@@ -108,4 +108,6 @@ Jetpack 'dag/vim-fish'
 
 call jetpack#end()
 
-packadd! editorconfig
+if !has('nvim')
+  packadd! editorconfig
+endif

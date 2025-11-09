@@ -1,1 +1,3 @@
-set foldmethod=syntax
+if !has('nvim')
+  setl foldmethod=syntax
+endif
