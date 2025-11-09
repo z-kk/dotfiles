@@ -2,6 +2,7 @@ alias ls='ls -ABF --show-control-chars --color=auto'
 alias grep='grep --color=auto'
 abbr pipython='pipenv run python'
 abbr pipvim='pipenv run vim'
+abbr pipnvim='pipenv run nvim'
 #abbr tmux='tmux -f $TMUXDIR/tmux.conf'
 abbr opensslenc='openssl enc -aes-256-cbc -pbkdf2 -salt -iter 99999 -k ${pass:-pass} -e'
 abbr today='date "+%Y-%m-%d %H:%M:%S"'
@@ -19,6 +20,12 @@ alias jetpacksync='vim -c JetpackSync'
 abbr unite='vim -c "Unite menu"'
 alias simplenote='vim -c SimplenoteList'
 alias memolist='vim -c MemoList'
+
+# Neovim
+alias nvim8='nvim -c "e ++enc=utf-8"'
+alias njetpacksync='nvim -c JetpackSync'
+alias nsimplenote='nvim -c SimplenoteList'
+alias nmemolist='nvim -c MemoList'
 
 # Git
 abbr gs='git status -s'
