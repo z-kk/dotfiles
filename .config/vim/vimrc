@@ -8,6 +8,7 @@ set incsearch
 set nohlsearch
 set ignorecase
 set smartcase
+set completeopt=fuzzy,popup,menuone,noinsert,noselect
 set shortmess-=S
 set wildmenu wildmode=full
 set wildignorecase
@@ -35,6 +36,9 @@ if &fenc !=# 'utf-8'
   set fenc=utf-8
   set fencs=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp
 endif
+
+" ---- terminal ----
+au TerminalOpen * setl nonumber
 
 " ---- cursor ----
 if has('vim_starting')

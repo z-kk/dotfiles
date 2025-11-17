@@ -4,6 +4,7 @@ Jetpack 'tani/vim-jetpack', {'opt': 1}
 "let g:jetpack_download_method = 'curl'
 
 Jetpack 'vim-jp/vimdoc-ja'
+Jetpack 'lambdalisue/vim-readablefold'
 "Jetpack 'embear/vim-localvimrc'
 "let g:localvimrc_persistent = 1
 "let g:localvimrc_persistence_file = $XDG_DATA_HOME . "/localvimrc_persistent"
@@ -63,10 +64,15 @@ Jetpack 'Shougo/unite-outline'
 
 Jetpack 'lambdalisue/fern.vim'
 let g:fern#default_hidden = 1
+Jetpack 'lambdalisue/vim-fern-renderer-nerdfont'
+let g:fern#renderer = "nerdfont"
+Jetpack 'lambdalisue/nerdfont.vim'
+Jetpack 'lambdalisue/vim-glyph-palette'
 Jetpack 'lambdalisue/fern-git-status.vim'
 Jetpack 'lambdalisue/vim-fern-hijack'
 Jetpack 'lambdalisue/vim-fern-bookmark'
 let g:fern#scheme#bookmark#store#file = $XDG_CONFIG_HOME . "/fern/bookmark.json"
+Jetpack 'yuki-yano/fern-preview.vim'
 
 if executable("yazi")
   Jetpack 'chriszarate/yazi.vim'
@@ -79,12 +85,20 @@ endif
 Jetpack 'tyru/open-browser.vim'
 
 Jetpack 'AndrewRadev/linediff.vim'
+Jetpack 'will133/vim-dirdiff'
 
 " filetype
 Jetpack 'preservim/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_toc_autofit = 1
+Jetpack 'masukomi/vim-markdown-folding'
 Jetpack 'mattn/vim-maketable'
+
+Jetpack 'jceb/vim-orgmode'
+let g:org_agenda_files = [$XDG_DATA_HOME . "/org/**/*.org"]
+let g:org_todo_keywords = [ "TODO(t)", "HOLD", "WAIT", "IDEA", "|", "DONE", "KILL" ]
+let g:org_todo_keyword_faces = [['TODO', 'red'], ['HOLD', 'yellow'], ['WAIT', 'blue'], ['IDEA', 'cyan'], ['KILL', 'gray']]
+let g:org_indent = 1
 
 Jetpack 'chrisbra/csv.vim', { 'for': 'csv' }
 let g:csv_no_conceal = 1

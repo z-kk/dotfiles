@@ -6,7 +6,7 @@ set smartindent
 set expandtab
 
 " 全角記号の文字幅
-set ambiwidth=double
+"set ambiwidth=double
 
 " 改行時自動コメントアウトしない
 autocmd FileType * setlocal formatoptions-=ro

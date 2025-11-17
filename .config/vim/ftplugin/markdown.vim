@@ -1,0 +1,1 @@
+nnoremap <buffer> <Tab> za
