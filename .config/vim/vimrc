@@ -8,10 +8,19 @@ set incsearch
 set nohlsearch
 set ignorecase
 set smartcase
+set completeopt=fuzzy,popup,menuone,noinsert
+if has('patch-9.1.0684')
+  set completeopt+=noselect
+endif
 set shortmess-=S
 set wildmenu wildmode=full
 set wildignorecase
 set foldmethod=indent
+
+if has('patch-9.1.1819')
+  set foldcolumn=1
+  set fillchars=foldsep:\ ,foldinner:\ ,foldopen:v,foldclose:>
+endif
 
 if has('patch-8.1.0360')
   set diffopt+=internal,algorithm:histogram,indent-heuristic
@@ -35,6 +44,9 @@ if &fenc !=# 'utf-8'
   set fenc=utf-8
   set fencs=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,cp932,sjis,euc-jp
 endif
+
+" ---- terminal ----
+au TerminalOpen * setl nonumber
 
 " ---- cursor ----
 if has('vim_starting')
@@ -70,6 +82,9 @@ if has('win32') || has('win64')
   set shellquote=\"
   set shellxquote=
 endif
+
+" ---- font ----
+set guifont=Bizin\ Gothic\ NF:h12
 
 filetype off
 runtime! config/plugin.vim
