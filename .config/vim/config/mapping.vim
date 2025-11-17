@@ -13,6 +13,7 @@ noremap <F12> :LspDefinition <CR>
 nnoremap <leader>fn :Fern .<CR>
 nnoremap <leader>ff :Fern . -reveal=%<CR>
 nnoremap <leader>fd :Fern . -reveal=% -drawer -toggle<CR>
+nnoremap <leader>fh :Fern %:h -reveal=%<CR>
 nnoremap <leader>fb :Fern bookmark:///<CR>
 autocmd FileType fern nmap <buffer> p P
 autocmd FileType fern nmap <buffer> Y C
@@ -28,6 +29,8 @@ autocmd FileType * vmap <buffer> gx <Plug>(openbrowser-smart-search)
 nnoremap <leader>mn :MemoNew<CR>
 nnoremap <leader>ml :MemoList<CR>
 nnoremap <leader>mg :MemoGrep<CR>
+
+nnoremap <leader>eo :edit $XDG_DATA_HOME/org<CR>
 
 nnoremap <leader>uf :Unite file<CR>
 nnoremap <leader>ub :Unite buffer<CR>
