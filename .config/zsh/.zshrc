@@ -28,6 +28,35 @@ zi load zsh-users/zsh-completions
 #zi snippet OMZT::lukerandall
 zi snippet OMZT::steeef
 
+RPROMPT="%F{magenta}"
+# vim
+if [ -n "$VIM" ]; then
+    RPROMPT=$RPROMPT"vim"
+fi
+
+# nvim
+if [ -n "$NVIM" ]; then
+    RPROMPT=$RPROMPT" nvim"
+fi
+
+# yazi
+if [ -n "$YAZI_LEVEL" ]; then
+    if [ "$YAZI_LEVEL" -gt 1 ]; then
+        RPROMPT=$RPROMPT" yazi[$YAZI_LEVEL]"
+    else
+        RPROMPT=$RPROMPT" yazi"
+    fi
+fi
+
+# nnn
+if [ -n "$NNNLVL" ]; then
+    if [ "$NNNLVL" -gt 1 ]; then
+        RPROMPT=$RPROMPT" nnn[$NNNLVL]"
+    else
+        RPROMPT=$RPROMPT" nnn"
+    fi
+fi
+
 # alias
 zi load momo-lab/zsh-abbrev-alias
 source $ZDOTDIR/aliases.zsh
