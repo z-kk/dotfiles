@@ -17,6 +17,7 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
+set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python_history"
 set -gx MYSQL_HISTFILE "$XDG_DATA_HOME/mysql_history"
 set -gx SQLITE_HISTORY "$XDG_DATA_HOME/sqlite_history"
 set -gx TASKRC "$XDG_CONFIG_HOME/task/taskrc"

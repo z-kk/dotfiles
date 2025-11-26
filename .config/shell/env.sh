@@ -22,6 +22,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
