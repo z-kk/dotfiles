@@ -22,6 +22,38 @@ if [ -f $GIT_PROMPT_PATH ]; then
     . $GIT_PROMPT_PATH
 fi
 
+# vim
+__vim_ps1=""
+if [ -n "$VIM" ]; then
+    __vim_ps1="(vim) "
+fi
+
+# nvim
+__nvim_ps1=""
+if [ -n "$NVIM" ]; then
+    __nvim_ps1="(nvim) "
+fi
+
+# yazi
+__yazi_ps1=""
+if [ -n "$YAZI_LEVEL" ]; then
+    if [ "$YAZI_LEVEL" -gt 1 ]; then
+        __yazi_ps1="(yazi[$YAZI_LEVEL]) "
+    else
+        __yazi_ps1="(yazi) "
+    fi
+fi
+
+# nnn
+__nnn_ps1=""
+if [ -n "$NNNLVL" ]; then
+    if [ "$NNNLVL" -gt 1 ]; then
+        __nnn_ps1="(nnn[$NNNLVL]) "
+    else
+        __nnn_ps1="(nnn) "
+    fi
+fi
+
 # pyenv
 if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init -)"
@@ -57,7 +89,8 @@ fi
 
 if [[ $OSTYPE =~ linux ]]; then
     # linux
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;${USERCOLOR}m\]\u@\h\[\033[${CLEAR}m\]:\[\033[01;${BLUE}m\]\w'
+    PS1=$__vim_ps1$__nvim_ps1$__yazi_ps1$__nnn_ps1
+    PS1=$PS1'${debian_chroot:+($debian_chroot)}\[\033[01;${USERCOLOR}m\]\u@\h\[\033[${CLEAR}m\]:\[\033[01;${BLUE}m\]\w'
     if [ -f $GIT_PROMPT_PATH ]; then
         PS1=$PS1'\[\033[${CYAN}m\]$(__git_ps1 "(%s)")'
     fi
@@ -69,7 +102,8 @@ if [[ $OSTYPE =~ linux ]]; then
     fi
 elif [[ $OSTYPE =~ cygwin ]]; then
     # cygwin
-    PS1='\[\e]0;\w\a\]\n\[\e[${USERCOLOR}m\]\u@\h \[\e[${YELLOW}m\]\w'
+    PS1=$__vim_ps1$__yazi_ps1$__nnn_ps1
+    PS1=$PS1'\[\e]0;\w\a\]\n\[\e[${USERCOLOR}m\]\u@\h \[\e[${YELLOW}m\]\w'
     if [ -f $GIT_PROMPT_PATH ]; then
         PS1=$PS1'\[\e[${CYAN}m\]$(__git_ps1 " (%s)")'
     fi
