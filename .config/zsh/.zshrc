@@ -5,6 +5,9 @@ source "$ZDOTDIR/defaultrc.zsh"
 prompt default
 HISTFILE="$XDG_STATE_HOME/zsh/history"
 
+# completion
+fpath=($ZDOTDIR/completions $fpath)
+
 # ZI
 typeset -Ag ZI
 typeset -gx ZI[HOME_DIR]="$ZDOTDIR/zi"
