@@ -8,7 +8,13 @@ set -gx LC_ALL
 set -gx LANG C.UTF-8
 set -gx LC_COLLATE C  # lsの並び順
 
-set -gx EDITOR vim
+if command -v nvim | string match -q "/usr/*"
+    set -gx EDITOR nvim
+else if command -v vim | string match -q "/usr/*"
+    set -gx EDITOR vim
+else if command -v vi | string match -q "/usr/*"
+    set -gx EDITOR vi
+end
 
 # XDG
 set -gx XDG_CONFIG_HOME "$HOME/.config"

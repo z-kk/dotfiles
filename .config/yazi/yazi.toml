@@ -7,7 +7,7 @@ show_symlink = false
 [opener]
 edit = [
 	{ run = "${EDITOR:-vi} %s", desc = "$EDITOR", block = true, for = "unix" },
-	{ run = "vim.exe %s", desc = "vim", block = true, for = "windows" },
+	{ run = "%EDITOR% %s", desc = "%EDITOR%", block = true, for = "windows" },
 ]
 
 [open]
