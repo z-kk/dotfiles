@@ -12,7 +12,13 @@ elif [[ $OSTYPE =~ darwin ]]; then
     export LSCOLORS=gxfxcxdxbxegedabagacad
 fi
 
-export EDITOR=vim
+if command -v nvim | grep -q "/usr/"; then
+    export EDITOR=nvim
+elif command -v vim | grep -q "/usr/"; then
+    export EDITOR=vim
+elif command -v vi | grep -q "/usr/"; then
+    export EDITOR=vi
+fi
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
