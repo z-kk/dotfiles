@@ -7,6 +7,10 @@ Status:children_add(function(self)
 	end
 end, 3300, Status.LEFT)
 
+require("zoxide"):setup {
+	update_db = true,
+}
+
 require("smart-enter"):setup {
 	open_multi = true,
 }
