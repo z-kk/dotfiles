@@ -41,6 +41,11 @@ if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init -)"
 fi
 
+# zoxide
+if [ -x "$(command -v zoxide)" ]; then
+    eval "$(zoxide init zsh)"
+fi
+
 # コマンドの訂正
 setopt correct
 

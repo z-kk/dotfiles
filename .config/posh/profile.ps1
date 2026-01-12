@@ -24,3 +24,8 @@ Import-Module posh-git
 
 # alias
 Set-Alias -Name open -Value start
+
+# zoxide
+if (Get-Command zoxide -ErrorAction SilentlyContinue) {
+    Invoke-Expression (& { (zoxide init powershell | Out-String) })
+}
