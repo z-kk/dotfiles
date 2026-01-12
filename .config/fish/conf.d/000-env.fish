@@ -47,6 +47,9 @@ and set -ax fish_user_paths "$GOPATH/bin"
 # vim
 set -gx VIMINIT 'let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
+# zoxide
+set -gx _ZO_EXCLUDE_DIRS "$HOME:$XDG_DATA_HOME/bookmarks/*"
+
 # nnn
 set -gx NNN_OPTS "AdHio"
 set -gx NNN_COLORS "#0b0a0c0d;3265"

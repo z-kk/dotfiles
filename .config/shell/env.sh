@@ -39,6 +39,8 @@ export GOPATH="$XDG_DATA_HOME/go"
 
 export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
 
+export _ZO_EXCLUDE_DIRS="$HOME:$XDG_DATA_HOME/bookmarks/*"
+
 export NNN_OPTS="AdHio"
 export NNN_COLORS="#0b0a0c0d;3265"
 export NNN_FIFO="/tmp/nnn.fifo"
