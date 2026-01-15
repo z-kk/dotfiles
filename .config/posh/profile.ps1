@@ -1,5 +1,5 @@
-. $HOME\.config\posh\env.ps1
 . $HOME\.config\posh\functions.ps1
+. $HOME\.config\posh\env.ps1
 . $HOME\.config\posh\aliases.ps1
 
 # PS color config

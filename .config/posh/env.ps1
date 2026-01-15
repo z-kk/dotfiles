@@ -1,5 +1,9 @@
-Set-Item env:Path $env:Path.Replace("$HOME\.local\bin;", "")
-Set-Item env:Path "$HOME\.local\bin;$env:Path"
+$gnuWin32bin = Get-ChildItem $env:LOCALAPPDATA\Microsoft\WinGet\Packages\GnuWin32*\bin -ErrorAction SilentlyContinue
+foreach ($dir in $gnuWin32bin) {
+    Prepend-Path $dir
+}
+Prepend-Path "C:\Program Files (x86)\GnuWin32\bin"
+Prepend-Path "$HOME\.local\bin"
 
 Set-Item env:HOME $HOME
 Set-Item env:XDG_CONFIG_HOME (($HOME -replace '\\','/') + "/.config")
