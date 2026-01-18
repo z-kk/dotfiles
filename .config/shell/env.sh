@@ -1,7 +1,7 @@
 export OSTYPE
 if [[ $OSTYPE =~ linux ]]; then
     umask 022
-    if [[ -n $(grep -i Microsoft /proc/version) ]]; then
+    if [[ -n "$WSL_DISTRO_NAME" ]]; then
         export IS_WSL=1
         if [[ -n $(ps -o command= -p $(ps -o ppid= -p $$) | grep wsltty) ]]; then
             export IS_WSLTTY=1
