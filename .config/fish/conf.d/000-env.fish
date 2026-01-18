@@ -72,7 +72,7 @@ switch (uname)
         umask 022
 
         # WSL
-        test (grep -i microsoft /proc/version)
+        test -n "$WSL_DISTRO_NAME"
         and set -x IS_WSL 1
         and set -gx NNN_OPENER "wsl-open"
         and set -gx NNN_BMS "d:/mnt/c/Users/$USER/Downloads;b:$XDG_DATA_HOME/bookmarks"
