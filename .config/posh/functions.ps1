@@ -7,6 +7,34 @@ function Prepend-Path($path) {
     Set-Item env:Path "$path;$env:Path"
 }
 
+function Get-WslInfo($name) {
+    $info = Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss
+    if ($name -eq $null) {
+        return $info
+    }
+    $info | Where-Object { $_.GetValue("DistributionName") -eq "$name" }
+}
+
+function mklnk($name, $path) {
+    $UrlExt = ".url"
+    $LnkExt = ".lnk"
+    if ($path.StartsWith("http")) {
+        if (!$name.EndsWith($UrlExt)){
+            $name = $name + $UrlExt
+        }
+    } else {
+        if (!$name.EndsWith($LnkExt)) {
+            $name = $name + $LnkExt
+        }
+    }
+    $name = [System.IO.Path]::GetFullPath($name, (Get-Location).Path)
+
+    $Shell = New-Object -ComObject WScript.Shell
+    $Shortcut = $Shell.CreateShortcut($name)
+    $Shortcut.TargetPath = $path
+    $Shortcut.Save()
+}
+
 function y {
     $tmp = (New-TemporaryFile).FullName
     yazi $args --cwd-file="$tmp"
