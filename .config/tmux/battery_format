@@ -1,6 +1,11 @@
 #!/bin/sh
 
-battery=$(cat /sys/class/power_supply/BAT*/capacity)
+battery="**"
+if [ $IS_WSL ]; then
+    battery=$(powershell.exe -NoProfile -Command "(Get-CimInstance Win32_Battery).EstimatedChargeRemaining" | sed 's/\r$//')
+else
+    battery=$(cat /sys/class/power_supply/BAT*/capacity)
+fi
 
 if [ $battery -lt 20 ]; then
     res="#[bg=red,fg=white]${battery}%#[default]"
