@@ -12,6 +12,7 @@ abbr service='sudo service'
 abbr mount='sudo mount'
 abbr umount='sudo umount'
 abbr apt='sudo apt'
+abbr apk='sudo apk'
 abbr shutdown='sudo shutdown'
 
 # Vim
@@ -26,6 +27,10 @@ alias nvim8='nvim -c "e ++enc=utf-8"'
 alias njetpacksync='nvim -c JetpackSync'
 alias nsimplenote='nvim -c SimplenoteList'
 alias nmemolist='nvim -c MemoList'
+abbr org='nvim $XDG_DATA_HOME/org/note.org'
+if [ -n "$NVIM" ]; then
+    alias nvim='command nvim --server "$NVIM" --remote'
+fi
 
 # Git
 abbr gs='git status -s'
