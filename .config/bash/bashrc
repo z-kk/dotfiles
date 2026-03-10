@@ -55,7 +55,7 @@ if [ -n "$NNNLVL" ]; then
 fi
 
 # pyenv
-if [ -e $PYENV_ROOT ]; then
+if [ -e "$PYENV_ROOT" ]; then
     eval "$(pyenv init -)"
 fi
 

@@ -8,6 +8,20 @@ Remove-Alias -Force gl
 Remove-Alias -Force gc
 Remove-Alias -Force gcm
 
+# Vim
+abbr vim8 'vim -c "e ++enc=utf-8"'
+abbr jetpacksync 'vim -c JetpackSync'
+abbr memolist 'vim -c MemoList'
+
+# Neovim
+abbr nvim8 'nvim -c "e ++enc=utf-8"'
+abbr njetpacksync 'nvim -c JetpackSync'
+abbr nmemolist 'nvim -c MemoList'
+abbr org 'nvim $XDG_DATA_HOME/org/note.org'
+if ($env:NVIM) {
+    abbr nvim 'nvim.exe --server $env:NVIM --remote'
+}
+
 # Git
 abbr gs 'git status -s'
 abbr gl 'git log --oneline'

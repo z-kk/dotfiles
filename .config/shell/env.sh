@@ -1,7 +1,7 @@
 export OSTYPE
 if [[ $OSTYPE =~ linux ]]; then
     umask 022
-    if [[ -n $(grep -i Microsoft /proc/version) ]]; then
+    if [[ -n "$WSL_DISTRO_NAME" ]]; then
         export IS_WSL=1
         if [[ -n $(ps -o command= -p $(ps -o ppid= -p $$) | grep wsltty) ]]; then
             export IS_WSLTTY=1
@@ -30,6 +30,7 @@ export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
 export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
 export MYSQL_HISTFILE="$XDG_DATA_HOME/mysql_history"
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
 export SQLITE_HISTORY="$XDG_DATA_HOME/sqlite_history"
 export TASKRC="$XDG_CONFIG_HOME/task/taskrc"
 export TASKDATA="$XDG_DATA_HOME/task"

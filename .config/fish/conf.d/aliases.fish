@@ -23,6 +23,9 @@ abbr -a nvim8 nvim -c '"e ++enc=utf-8"'
 abbr -a njetpacksync nvim -c JetpackSync
 abbr -a nsimplenote nvim -c SimplenoteList
 abbr -a nmemolist nvim -c MemoList
+abbr -a org nvim $XDG_DATA_HOME/org/note.org
+test $NVIM
+and alias nvim "nvim --server $NVIM --remote"
 
 #Git
 abbr -a gs git status -s
