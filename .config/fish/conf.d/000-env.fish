@@ -25,6 +25,7 @@ set -gx XDG_STATE_HOME "$HOME/.local/state"
 set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
 set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python_history"
 set -gx MYSQL_HISTFILE "$XDG_DATA_HOME/mysql_history"
+set -gx PSQL_HISTORY "$XDG_CACHE_HOME/pg/psql_history"
 set -gx SQLITE_HISTORY "$XDG_DATA_HOME/sqlite_history"
 set -gx TASKRC "$XDG_CONFIG_HOME/task/taskrc"
 set -gx TASKDATA "$XDG_DATA_HOME/task"
@@ -34,7 +35,7 @@ set -gx TMUXDIR "$XDG_CONFIG_HOME/tmux"
 
 # pyenv
 set -gx PYENV_ROOT "$XDG_CONFIG_HOME/pyenv"
-test -e $PYENV_ROOT
+test -e "$PYENV_ROOT"
 and set -ax fish_user_paths "$PYENV_ROOT/bin"
 and pyenv init - | source
 
