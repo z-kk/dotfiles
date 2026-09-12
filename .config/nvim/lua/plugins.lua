@@ -6,7 +6,7 @@ if vim.fn.filereadable(jetpackfile) == 0 then
 end
 
 local pkglist = {
-  {'tani/vim-jetpack', opt = true, config = function()
+  {'z-kk/vim-jetpack', branch = 'fix/vim-list-callable-check', opt = true, config = function()
     --vim.g.jetpack_download_method = 'curl'
   end},
 
