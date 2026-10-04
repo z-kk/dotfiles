@@ -2,6 +2,8 @@ if [[ $READPATH ]]; then
     return
 fi
 
+export PATH="$XDG_CONFIG_HOME/emacs/bin:$PATH"
+
 export PATH="$PYENV_ROOT/bin:$PATH"
 if [ -e $PYENV_ROOT ]; then
     eval "$(pyenv init --path)"
