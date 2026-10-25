@@ -10,25 +10,29 @@ local pkglist = {
     --vim.g.jetpack_download_method = 'curl'
   end},
 
-  {'vim-jp/vimdoc-ja'},
-  {'vim-jp/nvimdoc-ja'},
+  {'vim-jp/vimdoc-ja', event = { 'CmdlineEnter' }},
+  {'vim-jp/nvimdoc-ja', event = { 'CmdlineEnter' }},
 
-  {'akinsho/toggleterm.nvim', config = function()
-    require('toggleterm').setup({
-      direction = 'float',
-    })
-  end},
+  {'akinsho/toggleterm.nvim',
+    cmd = { 'ToggleTerm' },
+    config = function()
+      require('toggleterm').setup({
+        direction = 'float',
+      })
+    end,
+  },
 
-  {'sevenc-nanashi/neov-ime.nvim'},
+  {'sevenc-nanashi/neov-ime.nvim', event = { 'GUIEnter' }},
 
   -- Git --
-  {'tpope/vim-fugitive'},
-  {'benknoble/gitignore-vim'},
+  {'tpope/vim-fugitive', event = { 'VeryLazy' }},
+  {'benknoble/gitignore-vim', event = { 'VeryLazy' }},
   {'NeogitOrg/neogit',
     requires = {
       'nvim-lua/plenary.nvim',
       'sindrets/diffview.nvim',
     },
+    cmd = { 'Neogit' },
     config = function()
       vim.api.nvim_create_autocmd('BufEnter', {
         pattern = {'Neogit*'},
@@ -53,18 +57,25 @@ local pkglist = {
   end},
 
   -- colorscheme --
-  {'w0ng/vim-hybrid', config = function()
-    vim.g.hybrid_custom_term_colors = 1
-  end},
+  {'w0ng/vim-hybrid',
+    config = function()
+      vim.g.hybrid_custom_term_colors = 1
+    end,
+  },
   {'svjunic/RadicalGoodSpeed.vim'},
   {'Haron-Prime/Antares'},
 
-  {'uga-rosa/ccc.nvim', config = function()
-    require('ccc').setup()
-  end},
+  {'uga-rosa/ccc.nvim',
+    event = { 'CmdlineEnter' },
+    config = function()
+      require('ccc').setup()
+    end,
+  },
 
   -- complement --
-  {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate',
+  {'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    event = { 'VeryLazy' },
     config = function()
       require('nvim-treesitter').setup()
       vim.api.nvim_create_autocmd("FileType", {
@@ -101,35 +112,48 @@ local pkglist = {
       end
     end,
   },
-  {'neovim/nvim-lspconfig', config = function()
-    local servers = {}
-    if vim.fn.executable('clangd') == 1 then table.insert(servers, "clangd") end
-    if vim.fn.executable('nimlsp') == 1 then table.insert(servers, "nimls") end
-    if vim.fn.executable('pylsp') == 1 then table.insert(servers, "pylsp") end
-    vim.lsp.enable(servers)
-  end},
-  {'mason-org/mason.nvim', config = function()
-    require('mason').setup()
-  end},
-  {'mason-org/mason-lspconfig.nvim', config = function()
-    local servers = {}
-    require('mason-lspconfig').setup({
-      ensure_installed = servers,
-    })
-    vim.lsp.enable(servers)
-  end},
+  {'neovim/nvim-lspconfig',
+    event = { 'VeryLazy' },
+    config = function()
+      local servers = {}
+      if vim.fn.executable('clangd') == 1 then table.insert(servers, "clangd") end
+      if vim.fn.executable('nimlsp') == 1 then table.insert(servers, "nimls") end
+      if vim.fn.executable('pylsp') == 1 then table.insert(servers, "pylsp") end
+      vim.lsp.enable(servers)
+    end,
+  },
+  {'mason-org/mason.nvim',
+    event = { 'VeryLazy' },
+    config = function()
+      require('mason').setup()
+    end,
+  },
+  {'mason-org/mason-lspconfig.nvim',
+    event = { 'VeryLazy' },
+    config = function()
+      local servers = {}
+      require('mason-lspconfig').setup({
+        ensure_installed = servers,
+      })
+      vim.lsp.enable(servers)
+    end,
+  },
 
-  {'L3MON4D3/LuaSnip', run = 'make install_jsregexp', config = function()
-    require('luasnip.loaders.from_lua').load()
-  end},
+  {'L3MON4D3/LuaSnip',
+    run = 'make install_jsregexp',
+    config = function()
+      require('luasnip.loaders.from_lua').load()
+    end,
+  },
   {'hrsh7th/nvim-cmp',
     requires = {
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-path',
+      {'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp'},
+      {'hrsh7th/cmp-buffer', after = 'nvim-cmp'},
+      {'hrsh7th/cmp-path', after = 'nvim-cmp'},
       'L3MON4D3/LuaSnip',
-      'saadparwaiz1/cmp_luasnip',
+      {'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp'},
     },
+    event = { 'InsertEnter', 'LspAttach' },
     config = function()
       local cmp = require('cmp')
       local luasnip = require('luasnip')
@@ -185,124 +209,158 @@ local pkglist = {
   },
 
   -- file utils --
-  {'lambdalisue/fern.vim', config = function()
-    vim.g['fern#default_hidden'] = 1
-  end},
+  {'lambdalisue/fern.vim',
+    cmd = { 'Fern' },
+    config = function()
+      vim.g['fern#default_hidden'] = 1
+    end,
+  },
   {'lambdalisue/vim-fern-renderer-nerdfont',
     requires = {
       'lambdalisue/nerdfont.vim',
       'lambdalisue/vim-glyph-palette',
     },
+    cmd = { 'Fern' },
     config = function()
       vim.g['fern#renderer'] = "nerdfont"
     end,
   },
-  {'lambdalisue/fern-git-status.vim'},
+  {'lambdalisue/fern-git-status.vim', cmd = { 'Fern' }},
   {'lambdalisue/vim-fern-hijack'},
-  {'lambdalisue/vim-fern-bookmark', config = function()
-    vim.g['fern#scheme#bookmark#store#file'] = vim.env.XDG_CONFIG_HOME .. '/fern/bookmark.json'
-  end},
-  {'yuki-yano/fern-preview.vim'},
+  {'lambdalisue/vim-fern-bookmark',
+    cmd = { 'Fern' },
+    config = function()
+      vim.g['fern#scheme#bookmark#store#file'] = vim.env.XDG_CONFIG_HOME .. '/fern/bookmark.json'
+    end,
+  },
+  {'yuki-yano/fern-preview.vim', cmd = { 'Fern' }},
 
-  {'nvim-telescope/telescope.nvim', config = function()
-    require('telescope').setup({
-      defaults = {
-        sorting_strategy = "ascending",
-        layout_config = {
-          prompt_position = "top",
+  {'nvim-telescope/telescope.nvim',
+    cmd = { 'Telescope' },
+    config = function()
+      require('telescope').setup({
+        defaults = {
+          sorting_strategy = "ascending",
+          layout_config = {
+            prompt_position = "top",
+          },
         },
-      },
-    })
-  end},
+      })
+    end,
+  },
 
-  {'hedyhli/outline.nvim', config = function()
-    require('outline').setup()
-  end},
+  {'hedyhli/outline.nvim',
+    cmd = { 'Outline' },
+    config = function()
+      require('outline').setup()
+    end,
+  },
 
-  {'AndrewRadev/linediff.vim'},
-  {'will133/vim-dirdiff'},
+  {'AndrewRadev/linediff.vim', cmd = { 'Linediff' }},
+  {'will133/vim-dirdiff', cmd = { 'DirDiff' }},
 
   -- file type --
-  {'nvim-orgmode/orgmode', ft = { 'org' }, config = function()
-    require('orgmode').setup({
-      org_agenda_files = vim.env.XDG_DATA_HOME .. "/org/**/*",
-      org_default_notes_file = vim.env.XDG_DATA_HOME .. "/org/note.org",
-      org_todo_keywords = { "TODO(t)", "HOLD", "WAIT", "IDEA", "|", "DONE", "KILL" },
-      win_split_mode = "float",
-      org_todo_keyword_faces = {
-        HOLD = ':foreground 222',
-        WAIT = ':foreground blue',
-        IDEA = ':foreground cyan',
-        KILL = ':foreground gray',
-      },
-      org_startup_indented = true,
-      calendar_week_start_day = 0,
-      org_agenda_start_on_weekday = false,
-      org_agenda_custom_commands = {
-        n = {
-          description = 'Agenda and TODO list',
-          types = {
-            { type = 'agenda' },
-            {
-              type = 'tags_todo',
-              org_agenda_sorting_strategy = {'priority-down', 'todo-state-up', 'category-keep'},
+  {'nvim-orgmode/orgmode',
+    event = { 'BufReadPost', 'BufNewFile' },
+    cmd = { 'Org' },
+    ft = { 'org' },
+    config = function()
+      require('orgmode').setup({
+        org_agenda_files = vim.env.XDG_DATA_HOME .. "/org/**/*",
+        org_default_notes_file = vim.env.XDG_DATA_HOME .. "/org/note.org",
+        org_todo_keywords = { "TODO(t)", "HOLD", "WAIT", "IDEA", "|", "DONE", "KILL" },
+        win_split_mode = "float",
+        org_todo_keyword_faces = {
+          HOLD = ':foreground 222',
+          WAIT = ':foreground blue',
+          IDEA = ':foreground cyan',
+          KILL = ':foreground gray',
+        },
+        org_startup_indented = true,
+        calendar_week_start_day = 0,
+        org_agenda_start_on_weekday = false,
+        org_agenda_custom_commands = {
+          n = {
+            description = 'Agenda and TODO list',
+            types = {
+              { type = 'agenda' },
+              {
+                type = 'tags_todo',
+                org_agenda_sorting_strategy = {'priority-down', 'todo-state-up', 'category-keep'},
+              },
             },
           },
         },
-      },
-      org_agenda_sorting_strategy = {
-        todo = {'priority-down', 'todo-state-up', 'category-keep'},
-      },
-      org_agenda_use_time_grid = false,
-      org_agenda_skip_scheduled_if_done = true,
-      org_agenda_skip_deadline_if_done = true,
-      org_tags_column = 0,
-    })
-    vim.cmd("language time C.UTF-8")
-    vim.api.nvim_create_autocmd('FileType', {
-      pattern = 'orgagenda',
-      callback = function(args)
-        vim.schedule(function()
-          if require('orgmode.config').win_split_mode == "float" then
-            vim.keymap.set('n', '<Enter>', function()
-              require('orgmode').action('agenda.goto_item')
-              local buf = vim.fn.bufnr('orgagenda')
-              local win_id = vim.fn.win_getid(vim.fn.bufwinnr(buf))
-              vim.api.nvim_win_close(win_id, true)
-            end, { buffer = args.buf })
-          end
-        end)
-      end,
-    })
-  end},
+        org_agenda_sorting_strategy = {
+          todo = {'priority-down', 'todo-state-up', 'category-keep'},
+        },
+        org_agenda_use_time_grid = false,
+        org_agenda_skip_scheduled_if_done = true,
+        org_agenda_skip_deadline_if_done = true,
+        org_tags_column = 0,
+      })
+      vim.cmd("language time C.UTF-8")
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'orgagenda',
+        callback = function(args)
+          vim.schedule(function()
+            if require('orgmode.config').win_split_mode == "float" then
+              vim.keymap.set('n', '<Enter>', function()
+                require('orgmode').action('agenda.goto_item')
+                local buf = vim.fn.bufnr('orgagenda')
+                local win_id = vim.fn.win_getid(vim.fn.bufwinnr(buf))
+                vim.api.nvim_win_close(win_id, true)
+              end, { buffer = args.buf })
+            end
+          end)
+        end,
+      })
+    end,
+  },
 
-  {'MeanderingProgrammer/render-markdown.nvim', config = function()
-    require('render-markdown').setup({
-      code = {
-        language = false,
-        width = 'block',
-        left_pad = 2,
-        right_pad = 2,
-        border = 'thin',
-        style = 'language',
-      },
-    })
-  end},
-  {'Nedra1998/nvim-mdlink', config = function()
-    require('nvim-mdlink').setup()
-  end},
-  {'mattn/vim-maketable'},
+  {'MeanderingProgrammer/render-markdown.nvim',
+    ft = { 'markdown' },
+    config = function()
+      require('render-markdown').setup({
+        code = {
+          language = true,
+          width = 'block',
+          left_pad = 2,
+          right_pad = 2,
+          border = 'thin',
+          style = 'language',
+        },
+      })
+    end,
+  },
+  {'Nedra1998/nvim-mdlink',
+    event = { 'BufReadPost', 'BufNewFile' },
+    ft = { 'markdown' },
+    config = function()
+      require('nvim-mdlink').setup()
+    end,
+  },
+  {'mattn/vim-maketable', ft = { 'markdown' }},
 
-  {'chrisbra/csv.vim', ft = { 'csv' }, config = function()
-    vim.g.csv_no_conceal = 1
-  end},
-  {'alaviss/nim.nvim'},
+  {'chrisbra/csv.vim',
+    ft = { 'csv' },
+    config = function()
+      vim.g.csv_no_conceal = 1
+    end,
+  },
+  {'alaviss/nim.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    ft = { 'nim' },
+  },
 }
 if false then -- localvimrc
-  table.insert(pkglist, {'embear/vim-localvimrc', setup = function()
-    vim.g.localvimrc_persistent = 1
-    vim.g.localvimrc_persistence_file = vim.env.XDG_DATA_HOME .. "/localvimrc_persistent"
-  end})
+  table.insert(pkglist, {'embear/vim-localvimrc',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      vim.g.localvimrc_persistent = 1
+      vim.g.localvimrc_persistence_file = vim.env.XDG_DATA_HOME .. "/localvimrc_persistent"
+    end,
+  })
 end
 if true then -- Simplenote
   table.insert(pkglist, {'simplenote-vim/simplenote.vim',
@@ -321,25 +379,31 @@ if true then -- Simplenote
   })
 end
 if vim.fn.executable('yazi') == 1 then
-  table.insert(pkglist, {'mikavilpas/yazi.nvim', config = function()
-    require('yazi').setup {
-      hooks = {
-        yazi_opened = function(preselected_path, yazi_buffer_id, config)
-          vim.g.istermguicolors = vim.o.termguicolors
-          vim.opt.termguicolors = true
-        end,
+  table.insert(pkglist, {'mikavilpas/yazi.nvim',
+    cmd = { 'Yazi' },
+    config = function()
+      require('yazi').setup {
+        hooks = {
+          yazi_opened = function(preselected_path, yazi_buffer_id, config)
+            vim.g.istermguicolors = vim.o.termguicolors
+            vim.opt.termguicolors = true
+          end,
 
-        yazi_closed_successfully = function(chosen_file, config, state)
-          vim.opt.termguicolors = vim.g.istermguicolors
-        end,
-      },
-    }
-  end})
+          yazi_closed_successfully = function(chosen_file, config, state)
+            vim.opt.termguicolors = vim.g.istermguicolors
+          end,
+        },
+      }
+    end,
+  })
 end
 if vim.fn.executable('nnn') == 1 then
-  table.insert(pkglist, {'luukvbaal/nnn.nvim', config = function()
-    require('nnn').setup()
-  end})
+  table.insert(pkglist, {'luukvbaal/nnn.nvim',
+    event = { 'BufReadPost', 'BufNewFile' },
+    config = function()
+      require('nnn').setup()
+    end,
+  })
 end
 
 vim.cmd('packadd vim-jetpack')
