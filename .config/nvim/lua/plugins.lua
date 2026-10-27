@@ -81,6 +81,10 @@ local pkglist = {
       vim.api.nvim_create_autocmd("FileType", {
         callback = function()
           local ft = vim.bo.filetype
+          if vim.tbl_contains({"help", "man", "gitcommit"}, ft) then
+            return
+          end
+
           local lang = vim.treesitter.language.get_lang(ft)
           local ts = require('nvim-treesitter')
 
