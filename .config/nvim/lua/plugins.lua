@@ -161,6 +161,7 @@ local pkglist = {
         sources = cmp.config.sources({
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
+          { name = 'copilot' },
         }, {
           { name = 'path' },
           { name = 'buffer' },
@@ -172,9 +173,12 @@ local pkglist = {
         },
         mapping = {
           ['<CR>'] = function(fallback)
+            local entry = cmp.get_selected_entry()
             if cmp.visible() then
               if luasnip.expandable() then
                 luasnip.expand()
+              elseif entry and entry.source.name == "copilot" then
+                cmp.confirm({ select = true })
               else
                 fallback()
               end
@@ -206,6 +210,23 @@ local pkglist = {
         capabilities = require('cmp_nvim_lsp').default_capabilities()
       })
     end
+  },
+
+  {'zbirenbaum/copilot.lua',
+    cmd = { 'Copilot' },
+    event = { 'InsertEnter', 'LspAttach' },
+    config = function()
+      require('copilot').setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end,
+  },
+  {'zbirenbaum/copilot-cmp',
+    after = { 'copilot.lua', 'nvim-cmp' },
+    config = function()
+      require('copilot_cmp').setup()
+    end,
   },
 
   -- file utils --
